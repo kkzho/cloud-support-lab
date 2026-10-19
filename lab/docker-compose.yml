@@ -168,9 +168,11 @@ services:
     command:
       - /bin/sh
       - -c
-      - "apk add --no-cache curl >/dev/null 2>&1; while true; do curl -s -o /dev/null -w '%{http_code}' http://nginx/api/order/list; sleep 0.05; done"
+      - "apk add --no-cache curl >/dev/null 2>&1; while true; do for p in /api/order/list /api/order/list /api/order/list /healthz; do curl -s -o /dev/null http://nginx$p; done; sleep 0.05; done"
     logging: *default-logging
-    # Sustains ~20 rps against the gateway so latency/error panels stay live.
+    # Sustains ~15 rps against /api/order/list plus ~5 rps against /healthz.
+    # The /healthz probes are what trigger nginx passive health-check failures
+    # during S5 (healthz returns 500) so the gateway starts returning 502.
 
 volumes:
   mysql-data: {}
