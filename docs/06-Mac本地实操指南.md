@@ -156,6 +156,32 @@ docker pull mysql:8.0 redis:7-alpine nginx:1.27-alpine \
   nginx/nginx-prometheus-exporter:1.3.0
 ```
 
+> **⚠️ 国内常见报错：`context deadline exceeded` / `No such image`**
+> 这是因为 Docker Hub（`registry-1.docker.io`）在国内连接不稳定，所有镜像都拉不下来，
+> compose 就会逐个报 `No such image`。两种修复，**任选其一**：
+>
+> **方案一（推荐，一劳永逸）：给 Docker Desktop 配置镜像加速器**
+> 打开 Docker Desktop → Settings → Docker Engine，把 JSON 改成：
+> ```json
+> {
+>   "registry-mirrors": [
+>     "https://docker.m.daocloud.io",
+>     "https://hub-mirror.c.163.com",
+>     "https://mirror.baidubce.com"
+>   ]
+> }
+> ```
+> 点 **Apply & Restart**，然后重跑 `docker compose up -d`。
+>
+> **方案二（兜底，不动全局配置）：用脚本走镜像源拉取并重打标**
+> ```bash
+> cd ~/projects/cloud-support-lab/lab
+> MIRROR=https://docker.m.daocloud.io bash scripts/pull-images.sh
+> docker compose up -d
+> ```
+> 脚本会用 `docker.m.daocloud.io/xxx` 拉取再 `docker tag` 回 compose 期望的镜像名，
+> 已存在的镜像自动跳过，可重复执行。
+
 ### 4.2 入口与账号
 
 | 组件 | 地址 | 说明 |
@@ -264,6 +290,7 @@ docker stats --no-stream
 
 | 现象 | 原因 | 处理 |
 |---|---|---|
+| `failed to resolve reference ... context deadline exceeded` + 一连串 `No such image` | Docker Hub 在国内连接超时 | 见 4.1 节方案一/方案二：配置 `registry-mirrors` 或跑 `scripts/pull-images.sh` |
 | `docker compose up` 卡在 mysql | 首次初始化慢 / 内存不足 | 调大 Docker Desktop 内存≥6GB；`docker compose logs mysql` 看进度 |
 | 镜像 `no matching manifest for linux/arm64` | 该镜像无 arm64 版 | 本 compose 用的镜像均有 arm64；如自行替换某镜像无 arm64，可在 Docker Desktop 开启"Use Rosetta for x86/amd64 emulation" |
 | node-exporter 指标看着不对 | Docker Desktop 是 VM，`pid: host` 是 VM 的 host | 只作参考；本演练的节点指标以 **app 导出的 `node_*_percent`** 为准 |

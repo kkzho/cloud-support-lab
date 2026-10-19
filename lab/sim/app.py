@@ -489,17 +489,45 @@ def _tick_loop(app: Application, scenario: dict | None,
     """
     tick = 0
     total = int(scenario["total_ticks"]) if scenario else None
+
+    def _phase_name(t: int) -> str:
+        if not scenario:
+            return "healthy"
+        pre = int(scenario["pre_ticks"])
+        fault_end = pre + int(scenario["fault_ticks"])
+        if t < pre:
+            return "pre"
+        if t < fault_end:
+            return "fault"
+        return "post"
+
     while True:
         t0 = time.time()
         if scenario:
             phase_tick = tick % total
             inject.apply(app, scenario, phase_tick)
             app.state.sim_time = phase_tick
+        else:
+            phase_tick = tick
         with app.state.lock:
             app.run_second()
             # bound log memory for long-running demos
             if len(app.state.logs) > 5000:
                 del app.state.logs[:-5000]
+            # heartbeat every 10 simulated seconds so an idle terminal
+            # does not look "frozen"; surface the current phase and the
+            # signals that matter most for the running drill.
+            if tick % 10 == 0:
+                reg = app.state.reg
+                hz, _ = app.healthz()
+                p99 = reg.get_gauge("http_request_duration_ms_p99")
+                gw5xx = reg.get_counter("gateway_upstream_5xx_total")
+                cpu = reg.get_gauge("node_cpu_percent")
+                phase = _phase_name(phase_tick)
+                print(f"[tick {phase_tick:>4} | {phase:<5}] "
+                      f"healthz={hz} p99={p99:.0f}ms "
+                      f"gw5xx={int(gw5xx)} cpu={cpu:.0f}%",
+                      flush=True)
         tick += 1
         dt = period_s - (time.time() - t0)
         if dt > 0:

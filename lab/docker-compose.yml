@@ -9,8 +9,18 @@
 #   + /metrics) -> redis (cache) + mysql (db);  prometheus/grafana/alertmanager
 #   observe the whole chain; node-exporter/mysqld-exporter/redis-exporter feed
 #   infra metrics.
-
-version: "3.9"
+#
+# --- China / slow Docker Hub users -----------------------------------------
+# If `docker compose pull` times out against registry-1.docker.io, set registry
+# mirrors in Docker Desktop -> Settings -> Docker Engine:
+#   "registry-mirrors": [
+#     "https://docker.m.daocloud.io",
+#     "https://hub-mirror.c.163.com",
+#     "https://mirror.baidubce.com"
+#   ]
+# Then click "Apply & Restart" and re-run `docker compose up -d`.
+# If a single image still fails, run scripts/pull-images.sh which retags a
+# mirror-prefixed pull to the expected image name.
 
 x-logging: &default-logging
   driver: json-file
