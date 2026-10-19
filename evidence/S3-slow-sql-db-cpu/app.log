@@ -1,0 +1,287 @@
+2026-01-12T09:00:12 INFO  [app] order/list handled in 12ms cache=miss status=200
+2026-01-12T09:00:14 INFO  [app] order/list handled in 12ms cache=hit status=200
+2026-01-12T09:00:15 INFO  [app] order/list handled in 12ms cache=hit status=200
+2026-01-12T09:00:16 INFO  [app] order/list handled in 12ms cache=hit status=200
+2026-01-12T09:00:19 INFO  [app] order/list handled in 12ms cache=hit status=200
+2026-01-12T09:00:20 INFO  [app] order/list handled in 12ms cache=miss status=200
+2026-01-12T09:00:27 INFO  [app] order/list handled in 12ms cache=miss status=200
+2026-01-12T09:00:29 INFO  [app] order/list handled in 12ms cache=hit status=200
+2026-01-12T09:00:31 INFO  [app] order/list handled in 12ms cache=hit status=200
+2026-01-12T09:00:32 INFO  [app] order/list handled in 12ms cache=hit status=200
+2026-01-12T09:00:35 INFO  [app] order/list handled in 12ms cache=hit status=200
+2026-01-12T09:00:38 INFO  [app] order/list handled in 12ms cache=hit status=200
+2026-01-12T09:00:39 INFO  [app] order/list handled in 12ms cache=hit status=200
+2026-01-12T09:00:40 WARN  [db] # slow query: SELECT o.id,o.buyer_id,o.amount FROM orders o JOIN order_items i ON i.order_id=o.id WHERE o.status=? took 1200ms rows_examined=2524043
+2026-01-12T09:00:41 WARN  [db] # slow query: SELECT o.id,o.buyer_id,o.amount FROM orders o JOIN order_items i ON i.order_id=o.id WHERE o.status=? took 1200ms rows_examined=2885634
+2026-01-12T09:00:42 WARN  [db] # slow query: SELECT o.id,o.buyer_id,o.amount FROM orders o JOIN order_items i ON i.order_id=o.id WHERE o.status=? took 1200ms rows_examined=3577289
+2026-01-12T09:00:44 ERROR [app] HikariPool-1 - Connection is not available, request timed out after 400ms (total=10, active=10, idle=0, waiting=6)
+2026-01-12T09:00:44 WARN  [db] # slow query: SELECT o.id,o.buyer_id,o.amount FROM orders o JOIN order_items i ON i.order_id=o.id WHERE o.status=? took 1200ms rows_examined=8397003
+2026-01-12T09:00:45 WARN  [db] # slow query: SELECT o.id,o.buyer_id,o.amount FROM orders o JOIN order_items i ON i.order_id=o.id WHERE o.status=? took 1200ms rows_examined=7078334
+2026-01-12T09:00:46 WARN  [db] # slow query: SELECT o.id,o.buyer_id,o.amount FROM orders o JOIN order_items i ON i.order_id=o.id WHERE o.status=? took 1200ms rows_examined=3917085
+2026-01-12T09:00:47 WARN  [db] # slow query: SELECT o.id,o.buyer_id,o.amount FROM orders o JOIN order_items i ON i.order_id=o.id WHERE o.status=? took 1200ms rows_examined=3009867
+2026-01-12T09:00:48 WARN  [db] # slow query: SELECT o.id,o.buyer_id,o.amount FROM orders o JOIN order_items i ON i.order_id=o.id WHERE o.status=? took 1200ms rows_examined=3241006
+2026-01-12T09:00:48 WARN  [db] mysqld CPU above threshold: db_cpu=96% threads_running=70 slow_queries=24
+2026-01-12T09:00:49 WARN  [db] # slow query: SELECT o.id,o.buyer_id,o.amount FROM orders o JOIN order_items i ON i.order_id=o.id WHERE o.status=? took 1200ms rows_examined=8720447
+2026-01-12T09:00:50 ERROR [app] HikariPool-1 - Connection is not available, request timed out after 400ms (total=10, active=10, idle=0, waiting=6)
+2026-01-12T09:00:50 WARN  [db] # slow query: SELECT o.id,o.buyer_id,o.amount FROM orders o JOIN order_items i ON i.order_id=o.id WHERE o.status=? took 1200ms rows_examined=8666561
+2026-01-12T09:00:50 WARN  [db] mysqld CPU above threshold: db_cpu=96% threads_running=57 slow_queries=30
+2026-01-12T09:00:52 ERROR [app] HikariPool-1 - Connection is not available, request timed out after 400ms (total=10, active=10, idle=0, waiting=1)
+2026-01-12T09:00:52 WARN  [db] # slow query: SELECT o.id,o.buyer_id,o.amount FROM orders o JOIN order_items i ON i.order_id=o.id WHERE o.status=? took 1200ms rows_examined=3677692
+2026-01-12T09:00:53 WARN  [db] # slow query: SELECT o.id,o.buyer_id,o.amount FROM orders o JOIN order_items i ON i.order_id=o.id WHERE o.status=? took 1200ms rows_examined=4918843
+2026-01-12T09:00:53 WARN  [db] mysqld CPU above threshold: db_cpu=96% threads_running=69 slow_queries=34
+2026-01-12T09:00:54 ERROR [app] HikariPool-1 - Connection is not available, request timed out after 400ms (total=10, active=10, idle=0, waiting=2)
+2026-01-12T09:00:54 WARN  [db] # slow query: SELECT o.id,o.buyer_id,o.amount FROM orders o JOIN order_items i ON i.order_id=o.id WHERE o.status=? took 1200ms rows_examined=991938
+2026-01-12T09:00:55 ERROR [app] HikariPool-1 - Connection is not available, request timed out after 400ms (total=10, active=10, idle=0, waiting=5)
+2026-01-12T09:00:55 WARN  [db] # slow query: SELECT o.id,o.buyer_id,o.amount FROM orders o JOIN order_items i ON i.order_id=o.id WHERE o.status=? took 1200ms rows_examined=1552345
+2026-01-12T09:00:56 ERROR [app] HikariPool-1 - Connection is not available, request timed out after 400ms (total=10, active=10, idle=0, waiting=6)
+2026-01-12T09:00:56 WARN  [db] # slow query: SELECT o.id,o.buyer_id,o.amount FROM orders o JOIN order_items i ON i.order_id=o.id WHERE o.status=? took 1200ms rows_examined=2830345
+2026-01-12T09:00:56 WARN  [db] mysqld CPU above threshold: db_cpu=96% threads_running=97 slow_queries=38
+2026-01-12T09:00:57 ERROR [app] HikariPool-1 - Connection is not available, request timed out after 400ms (total=10, active=10, idle=0, waiting=6)
+2026-01-12T09:00:57 WARN  [db] # slow query: SELECT o.id,o.buyer_id,o.amount FROM orders o JOIN order_items i ON i.order_id=o.id WHERE o.status=? took 1200ms rows_examined=4427253
+2026-01-12T09:00:57 WARN  [db] mysqld CPU above threshold: db_cpu=96% threads_running=71 slow_queries=41
+2026-01-12T09:00:58 WARN  [db] # slow query: SELECT o.id,o.buyer_id,o.amount FROM orders o JOIN order_items i ON i.order_id=o.id WHERE o.status=? took 1200ms rows_examined=6301899
+2026-01-12T09:00:59 WARN  [db] # slow query: SELECT o.id,o.buyer_id,o.amount FROM orders o JOIN order_items i ON i.order_id=o.id WHERE o.status=? took 1200ms rows_examined=1310871
+2026-01-12T09:00:59 WARN  [db] mysqld CPU above threshold: db_cpu=96% threads_running=103 slow_queries=45
+2026-01-12T09:01:00 WARN  [db] # slow query: SELECT o.id,o.buyer_id,o.amount FROM orders o JOIN order_items i ON i.order_id=o.id WHERE o.status=? took 1200ms rows_examined=5926899
+2026-01-12T09:01:01 ERROR [app] HikariPool-1 - Connection is not available, request timed out after 400ms (total=10, active=10, idle=0, waiting=9)
+2026-01-12T09:01:01 WARN  [db] # slow query: SELECT o.id,o.buyer_id,o.amount FROM orders o JOIN order_items i ON i.order_id=o.id WHERE o.status=? took 1200ms rows_examined=4714123
+2026-01-12T09:01:01 WARN  [db] mysqld CPU above threshold: db_cpu=96% threads_running=104 slow_queries=51
+2026-01-12T09:01:02 ERROR [app] HikariPool-1 - Connection is not available, request timed out after 400ms (total=10, active=10, idle=0, waiting=12)
+2026-01-12T09:01:02 WARN  [db] # slow query: SELECT o.id,o.buyer_id,o.amount FROM orders o JOIN order_items i ON i.order_id=o.id WHERE o.status=? took 1200ms rows_examined=7361940
+2026-01-12T09:01:03 ERROR [app] HikariPool-1 - Connection is not available, request timed out after 400ms (total=10, active=10, idle=0, waiting=13)
+2026-01-12T09:01:03 WARN  [db] # slow query: SELECT o.id,o.buyer_id,o.amount FROM orders o JOIN order_items i ON i.order_id=o.id WHERE o.status=? took 1200ms rows_examined=7529220
+2026-01-12T09:01:03 WARN  [db] mysqld CPU above threshold: db_cpu=96% threads_running=68 slow_queries=58
+2026-01-12T09:01:04 WARN  [db] # slow query: SELECT o.id,o.buyer_id,o.amount FROM orders o JOIN order_items i ON i.order_id=o.id WHERE o.status=? took 1200ms rows_examined=7166372
+2026-01-12T09:01:05 ERROR [app] HikariPool-1 - Connection is not available, request timed out after 400ms (total=10, active=10, idle=0, waiting=6)
+2026-01-12T09:01:05 WARN  [db] # slow query: SELECT o.id,o.buyer_id,o.amount FROM orders o JOIN order_items i ON i.order_id=o.id WHERE o.status=? took 1200ms rows_examined=3509185
+2026-01-12T09:01:06 ERROR [app] HikariPool-1 - Connection is not available, request timed out after 400ms (total=10, active=10, idle=0, waiting=9)
+2026-01-12T09:01:06 WARN  [db] # slow query: SELECT o.id,o.buyer_id,o.amount FROM orders o JOIN order_items i ON i.order_id=o.id WHERE o.status=? took 1200ms rows_examined=3553735
+2026-01-12T09:01:07 WARN  [db] # slow query: SELECT o.id,o.buyer_id,o.amount FROM orders o JOIN order_items i ON i.order_id=o.id WHERE o.status=? took 1200ms rows_examined=5333846
+2026-01-12T09:01:07 WARN  [db] mysqld CPU above threshold: db_cpu=96% threads_running=42 slow_queries=66
+2026-01-12T09:01:08 ERROR [app] HikariPool-1 - Connection is not available, request timed out after 400ms (total=10, active=10, idle=0, waiting=3)
+2026-01-12T09:01:08 WARN  [db] # slow query: SELECT o.id,o.buyer_id,o.amount FROM orders o JOIN order_items i ON i.order_id=o.id WHERE o.status=? took 1200ms rows_examined=6831994
+2026-01-12T09:01:09 WARN  [db] # slow query: SELECT o.id,o.buyer_id,o.amount FROM orders o JOIN order_items i ON i.order_id=o.id WHERE o.status=? took 1200ms rows_examined=7614723
+2026-01-12T09:01:10 WARN  [db] # slow query: SELECT o.id,o.buyer_id,o.amount FROM orders o JOIN order_items i ON i.order_id=o.id WHERE o.status=? took 1200ms rows_examined=4988690
+2026-01-12T09:01:11 ERROR [app] HikariPool-1 - Connection is not available, request timed out after 400ms (total=10, active=10, idle=0, waiting=4)
+2026-01-12T09:01:11 WARN  [db] # slow query: SELECT o.id,o.buyer_id,o.amount FROM orders o JOIN order_items i ON i.order_id=o.id WHERE o.status=? took 1200ms rows_examined=3471589
+2026-01-12T09:01:12 WARN  [db] # slow query: SELECT o.id,o.buyer_id,o.amount FROM orders o JOIN order_items i ON i.order_id=o.id WHERE o.status=? took 1200ms rows_examined=1386424
+2026-01-12T09:01:12 WARN  [db] mysqld CPU above threshold: db_cpu=96% threads_running=58 slow_queries=81
+2026-01-12T09:01:13 ERROR [app] HikariPool-1 - Connection is not available, request timed out after 400ms (total=10, active=10, idle=0, waiting=6)
+2026-01-12T09:01:13 WARN  [db] # slow query: SELECT o.id,o.buyer_id,o.amount FROM orders o JOIN order_items i ON i.order_id=o.id WHERE o.status=? took 1200ms rows_examined=1188761
+2026-01-12T09:01:13 WARN  [db] mysqld CPU above threshold: db_cpu=96% threads_running=40 slow_queries=85
+2026-01-12T09:01:14 WARN  [db] # slow query: SELECT o.id,o.buyer_id,o.amount FROM orders o JOIN order_items i ON i.order_id=o.id WHERE o.status=? took 1200ms rows_examined=2853851
+2026-01-12T09:01:14 WARN  [db] mysqld CPU above threshold: db_cpu=96% threads_running=110 slow_queries=89
+2026-01-12T09:01:15 WARN  [db] # slow query: SELECT o.id,o.buyer_id,o.amount FROM orders o JOIN order_items i ON i.order_id=o.id WHERE o.status=? took 1200ms rows_examined=7192841
+2026-01-12T09:01:15 WARN  [db] mysqld CPU above threshold: db_cpu=96% threads_running=94 slow_queries=93
+2026-01-12T09:01:16 ERROR [app] HikariPool-1 - Connection is not available, request timed out after 400ms (total=10, active=10, idle=0, waiting=8)
+2026-01-12T09:01:16 WARN  [db] # slow query: SELECT o.id,o.buyer_id,o.amount FROM orders o JOIN order_items i ON i.order_id=o.id WHERE o.status=? took 1200ms rows_examined=2216009
+2026-01-12T09:01:17 ERROR [app] HikariPool-1 - Connection is not available, request timed out after 400ms (total=10, active=10, idle=0, waiting=1)
+2026-01-12T09:01:18 ERROR [app] HikariPool-1 - Connection is not available, request timed out after 400ms (total=10, active=10, idle=0, waiting=4)
+2026-01-12T09:01:18 WARN  [db] # slow query: SELECT o.id,o.buyer_id,o.amount FROM orders o JOIN order_items i ON i.order_id=o.id WHERE o.status=? took 1200ms rows_examined=4767047
+2026-01-12T09:01:19 ERROR [app] HikariPool-1 - Connection is not available, request timed out after 400ms (total=10, active=10, idle=0, waiting=5)
+2026-01-12T09:01:19 WARN  [db] # slow query: SELECT o.id,o.buyer_id,o.amount FROM orders o JOIN order_items i ON i.order_id=o.id WHERE o.status=? took 1200ms rows_examined=5896627
+2026-01-12T09:01:19 WARN  [db] mysqld CPU above threshold: db_cpu=96% threads_running=66 slow_queries=102
+2026-01-12T09:01:20 ERROR [app] HikariPool-1 - Connection is not available, request timed out after 400ms (total=10, active=10, idle=0, waiting=4)
+2026-01-12T09:01:20 WARN  [db] # slow query: SELECT o.id,o.buyer_id,o.amount FROM orders o JOIN order_items i ON i.order_id=o.id WHERE o.status=? took 1200ms rows_examined=4285671
+2026-01-12T09:01:21 ERROR [app] HikariPool-1 - Connection is not available, request timed out after 400ms (total=10, active=10, idle=0, waiting=8)
+2026-01-12T09:01:21 WARN  [db] # slow query: SELECT o.id,o.buyer_id,o.amount FROM orders o JOIN order_items i ON i.order_id=o.id WHERE o.status=? took 1200ms rows_examined=7309873
+2026-01-12T09:01:21 WARN  [db] mysqld CPU above threshold: db_cpu=96% threads_running=41 slow_queries=110
+2026-01-12T09:01:22 ERROR [app] HikariPool-1 - Connection is not available, request timed out after 400ms (total=10, active=10, idle=0, waiting=1)
+2026-01-12T09:01:22 WARN  [db] # slow query: SELECT o.id,o.buyer_id,o.amount FROM orders o JOIN order_items i ON i.order_id=o.id WHERE o.status=? took 1200ms rows_examined=4569310
+2026-01-12T09:01:22 WARN  [db] mysqld CPU above threshold: db_cpu=96% threads_running=118 slow_queries=113
+2026-01-12T09:01:23 ERROR [app] HikariPool-1 - Connection is not available, request timed out after 400ms (total=10, active=10, idle=0, waiting=14)
+2026-01-12T09:01:23 WARN  [db] # slow query: SELECT o.id,o.buyer_id,o.amount FROM orders o JOIN order_items i ON i.order_id=o.id WHERE o.status=? took 1200ms rows_examined=6526613
+2026-01-12T09:01:24 ERROR [app] HikariPool-1 - Connection is not available, request timed out after 400ms (total=10, active=10, idle=0, waiting=1)
+2026-01-12T09:01:24 WARN  [db] # slow query: SELECT o.id,o.buyer_id,o.amount FROM orders o JOIN order_items i ON i.order_id=o.id WHERE o.status=? took 1200ms rows_examined=5072439
+2026-01-12T09:01:24 WARN  [db] mysqld CPU above threshold: db_cpu=96% threads_running=50 slow_queries=122
+2026-01-12T09:01:25 WARN  [db] # slow query: SELECT o.id,o.buyer_id,o.amount FROM orders o JOIN order_items i ON i.order_id=o.id WHERE o.status=? took 1200ms rows_examined=6167536
+2026-01-12T09:01:26 WARN  [db] # slow query: SELECT o.id,o.buyer_id,o.amount FROM orders o JOIN order_items i ON i.order_id=o.id WHERE o.status=? took 1200ms rows_examined=1913417
+2026-01-12T09:01:26 WARN  [db] mysqld CPU above threshold: db_cpu=96% threads_running=80 slow_queries=126
+2026-01-12T09:01:27 ERROR [app] HikariPool-1 - Connection is not available, request timed out after 400ms (total=10, active=10, idle=0, waiting=5)
+2026-01-12T09:01:27 WARN  [db] # slow query: SELECT o.id,o.buyer_id,o.amount FROM orders o JOIN order_items i ON i.order_id=o.id WHERE o.status=? took 1200ms rows_examined=1607161
+2026-01-12T09:01:27 WARN  [db] mysqld CPU above threshold: db_cpu=96% threads_running=60 slow_queries=129
+2026-01-12T09:01:28 ERROR [app] HikariPool-1 - Connection is not available, request timed out after 400ms (total=10, active=10, idle=0, waiting=7)
+2026-01-12T09:01:28 WARN  [db] # slow query: SELECT o.id,o.buyer_id,o.amount FROM orders o JOIN order_items i ON i.order_id=o.id WHERE o.status=? took 1200ms rows_examined=2729374
+2026-01-12T09:01:29 ERROR [app] HikariPool-1 - Connection is not available, request timed out after 400ms (total=10, active=10, idle=0, waiting=2)
+2026-01-12T09:01:29 WARN  [db] # slow query: SELECT o.id,o.buyer_id,o.amount FROM orders o JOIN order_items i ON i.order_id=o.id WHERE o.status=? took 1200ms rows_examined=7544169
+2026-01-12T09:01:31 ERROR [app] HikariPool-1 - Connection is not available, request timed out after 400ms (total=10, active=10, idle=0, waiting=3)
+2026-01-12T09:01:31 WARN  [db] # slow query: SELECT o.id,o.buyer_id,o.amount FROM orders o JOIN order_items i ON i.order_id=o.id WHERE o.status=? took 1200ms rows_examined=4298586
+2026-01-12T09:01:32 WARN  [db] # slow query: SELECT o.id,o.buyer_id,o.amount FROM orders o JOIN order_items i ON i.order_id=o.id WHERE o.status=? took 1200ms rows_examined=5173413
+2026-01-12T09:01:34 ERROR [app] HikariPool-1 - Connection is not available, request timed out after 400ms (total=10, active=10, idle=0, waiting=6)
+2026-01-12T09:01:34 WARN  [db] # slow query: SELECT o.id,o.buyer_id,o.amount FROM orders o JOIN order_items i ON i.order_id=o.id WHERE o.status=? took 1200ms rows_examined=5607978
+2026-01-12T09:01:35 WARN  [db] # slow query: SELECT o.id,o.buyer_id,o.amount FROM orders o JOIN order_items i ON i.order_id=o.id WHERE o.status=? took 1200ms rows_examined=2159537
+2026-01-12T09:01:35 WARN  [db] mysqld CPU above threshold: db_cpu=96% threads_running=90 slow_queries=142
+2026-01-12T09:01:36 ERROR [app] HikariPool-1 - Connection is not available, request timed out after 400ms (total=10, active=10, idle=0, waiting=2)
+2026-01-12T09:01:36 WARN  [db] # slow query: SELECT o.id,o.buyer_id,o.amount FROM orders o JOIN order_items i ON i.order_id=o.id WHERE o.status=? took 1200ms rows_examined=7533027
+2026-01-12T09:01:37 ERROR [app] HikariPool-1 - Connection is not available, request timed out after 400ms (total=10, active=10, idle=0, waiting=7)
+2026-01-12T09:01:37 WARN  [db] # slow query: SELECT o.id,o.buyer_id,o.amount FROM orders o JOIN order_items i ON i.order_id=o.id WHERE o.status=? took 1200ms rows_examined=5618487
+2026-01-12T09:01:37 WARN  [db] mysqld CPU above threshold: db_cpu=96% threads_running=79 slow_queries=148
+2026-01-12T09:01:38 WARN  [db] # slow query: SELECT o.id,o.buyer_id,o.amount FROM orders o JOIN order_items i ON i.order_id=o.id WHERE o.status=? took 1200ms rows_examined=8577407
+2026-01-12T09:01:38 WARN  [db] mysqld CPU above threshold: db_cpu=96% threads_running=110 slow_queries=151
+2026-01-12T09:01:39 WARN  [db] # slow query: SELECT o.id,o.buyer_id,o.amount FROM orders o JOIN order_items i ON i.order_id=o.id WHERE o.status=? took 1200ms rows_examined=2066968
+2026-01-12T09:01:40 ERROR [app] HikariPool-1 - Connection is not available, request timed out after 400ms (total=10, active=10, idle=0, waiting=13)
+2026-01-12T09:01:40 WARN  [db] # slow query: SELECT o.id,o.buyer_id,o.amount FROM orders o JOIN order_items i ON i.order_id=o.id WHERE o.status=? took 1200ms rows_examined=3538981
+2026-01-12T09:01:40 WARN  [db] mysqld CPU above threshold: db_cpu=96% threads_running=88 slow_queries=158
+2026-01-12T09:01:41 WARN  [db] # slow query: SELECT o.id,o.buyer_id,o.amount FROM orders o JOIN order_items i ON i.order_id=o.id WHERE o.status=? took 1200ms rows_examined=3522852
+2026-01-12T09:01:42 WARN  [db] # slow query: SELECT o.id,o.buyer_id,o.amount FROM orders o JOIN order_items i ON i.order_id=o.id WHERE o.status=? took 1200ms rows_examined=1324985
+2026-01-12T09:01:44 ERROR [app] HikariPool-1 - Connection is not available, request timed out after 400ms (total=10, active=10, idle=0, waiting=11)
+2026-01-12T09:01:44 WARN  [db] # slow query: SELECT o.id,o.buyer_id,o.amount FROM orders o JOIN order_items i ON i.order_id=o.id WHERE o.status=? took 1200ms rows_examined=3424921
+2026-01-12T09:01:45 ERROR [app] HikariPool-1 - Connection is not available, request timed out after 400ms (total=10, active=10, idle=0, waiting=4)
+2026-01-12T09:01:45 WARN  [db] # slow query: SELECT o.id,o.buyer_id,o.amount FROM orders o JOIN order_items i ON i.order_id=o.id WHERE o.status=? took 1200ms rows_examined=4150653
+2026-01-12T09:01:46 WARN  [db] # slow query: SELECT o.id,o.buyer_id,o.amount FROM orders o JOIN order_items i ON i.order_id=o.id WHERE o.status=? took 1200ms rows_examined=5465418
+2026-01-12T09:01:46 WARN  [db] mysqld CPU above threshold: db_cpu=96% threads_running=68 slow_queries=167
+2026-01-12T09:01:47 ERROR [app] HikariPool-1 - Connection is not available, request timed out after 400ms (total=10, active=10, idle=0, waiting=5)
+2026-01-12T09:01:47 WARN  [db] # slow query: SELECT o.id,o.buyer_id,o.amount FROM orders o JOIN order_items i ON i.order_id=o.id WHERE o.status=? took 1200ms rows_examined=5905988
+2026-01-12T09:01:47 WARN  [db] mysqld CPU above threshold: db_cpu=96% threads_running=91 slow_queries=170
+2026-01-12T09:01:48 ERROR [app] HikariPool-1 - Connection is not available, request timed out after 400ms (total=10, active=10, idle=0, waiting=6)
+2026-01-12T09:01:48 WARN  [db] # slow query: SELECT o.id,o.buyer_id,o.amount FROM orders o JOIN order_items i ON i.order_id=o.id WHERE o.status=? took 1200ms rows_examined=2942361
+2026-01-12T09:01:49 ERROR [app] HikariPool-1 - Connection is not available, request timed out after 400ms (total=10, active=10, idle=0, waiting=8)
+2026-01-12T09:01:49 WARN  [db] # slow query: SELECT o.id,o.buyer_id,o.amount FROM orders o JOIN order_items i ON i.order_id=o.id WHERE o.status=? took 1200ms rows_examined=6352601
+2026-01-12T09:01:50 ERROR [app] HikariPool-1 - Connection is not available, request timed out after 400ms (total=10, active=10, idle=0, waiting=17)
+2026-01-12T09:01:50 WARN  [db] # slow query: SELECT o.id,o.buyer_id,o.amount FROM orders o JOIN order_items i ON i.order_id=o.id WHERE o.status=? took 1200ms rows_examined=8834934
+2026-01-12T09:01:51 ERROR [app] HikariPool-1 - Connection is not available, request timed out after 400ms (total=10, active=10, idle=0, waiting=6)
+2026-01-12T09:01:51 WARN  [db] # slow query: SELECT o.id,o.buyer_id,o.amount FROM orders o JOIN order_items i ON i.order_id=o.id WHERE o.status=? took 1200ms rows_examined=8317622
+2026-01-12T09:01:52 ERROR [app] HikariPool-1 - Connection is not available, request timed out after 400ms (total=10, active=10, idle=0, waiting=8)
+2026-01-12T09:01:52 WARN  [db] # slow query: SELECT o.id,o.buyer_id,o.amount FROM orders o JOIN order_items i ON i.order_id=o.id WHERE o.status=? took 1200ms rows_examined=2004326
+2026-01-12T09:01:52 WARN  [db] mysqld CPU above threshold: db_cpu=96% threads_running=103 slow_queries=191
+2026-01-12T09:01:53 ERROR [app] HikariPool-1 - Connection is not available, request timed out after 400ms (total=10, active=10, idle=0, waiting=8)
+2026-01-12T09:01:53 WARN  [db] # slow query: SELECT o.id,o.buyer_id,o.amount FROM orders o JOIN order_items i ON i.order_id=o.id WHERE o.status=? took 1200ms rows_examined=6916958
+2026-01-12T09:01:54 ERROR [app] HikariPool-1 - Connection is not available, request timed out after 400ms (total=10, active=10, idle=0, waiting=4)
+2026-01-12T09:01:54 WARN  [db] # slow query: SELECT o.id,o.buyer_id,o.amount FROM orders o JOIN order_items i ON i.order_id=o.id WHERE o.status=? took 1200ms rows_examined=1514891
+2026-01-12T09:01:54 WARN  [db] mysqld CPU above threshold: db_cpu=96% threads_running=59 slow_queries=198
+2026-01-12T09:01:55 ERROR [app] HikariPool-1 - Connection is not available, request timed out after 400ms (total=10, active=10, idle=0, waiting=10)
+2026-01-12T09:01:55 WARN  [db] # slow query: SELECT o.id,o.buyer_id,o.amount FROM orders o JOIN order_items i ON i.order_id=o.id WHERE o.status=? took 1200ms rows_examined=5336327
+2026-01-12T09:01:55 WARN  [db] mysqld CPU above threshold: db_cpu=96% threads_running=74 slow_queries=203
+2026-01-12T09:01:56 WARN  [db] # slow query: SELECT o.id,o.buyer_id,o.amount FROM orders o JOIN order_items i ON i.order_id=o.id WHERE o.status=? took 1200ms rows_examined=2171730
+2026-01-12T09:01:57 ERROR [app] HikariPool-1 - Connection is not available, request timed out after 400ms (total=10, active=10, idle=0, waiting=3)
+2026-01-12T09:01:57 WARN  [db] # slow query: SELECT o.id,o.buyer_id,o.amount FROM orders o JOIN order_items i ON i.order_id=o.id WHERE o.status=? took 1200ms rows_examined=714923
+2026-01-12T09:01:57 WARN  [db] mysqld CPU above threshold: db_cpu=96% threads_running=96 slow_queries=208
+2026-01-12T09:01:58 ERROR [app] HikariPool-1 - Connection is not available, request timed out after 400ms (total=10, active=10, idle=0, waiting=3)
+2026-01-12T09:01:58 WARN  [db] # slow query: SELECT o.id,o.buyer_id,o.amount FROM orders o JOIN order_items i ON i.order_id=o.id WHERE o.status=? took 1200ms rows_examined=7991662
+2026-01-12T09:01:59 ERROR [app] HikariPool-1 - Connection is not available, request timed out after 400ms (total=10, active=10, idle=0, waiting=16)
+2026-01-12T09:01:59 WARN  [db] # slow query: SELECT o.id,o.buyer_id,o.amount FROM orders o JOIN order_items i ON i.order_id=o.id WHERE o.status=? took 1200ms rows_examined=6696171
+2026-01-12T09:01:59 WARN  [db] mysqld CPU above threshold: db_cpu=96% threads_running=59 slow_queries=216
+2026-01-12T09:02:00 ERROR [app] HikariPool-1 - Connection is not available, request timed out after 400ms (total=10, active=10, idle=0, waiting=11)
+2026-01-12T09:02:00 WARN  [db] # slow query: SELECT o.id,o.buyer_id,o.amount FROM orders o JOIN order_items i ON i.order_id=o.id WHERE o.status=? took 1200ms rows_examined=1925538
+2026-01-12T09:02:01 ERROR [app] HikariPool-1 - Connection is not available, request timed out after 400ms (total=10, active=10, idle=0, waiting=11)
+2026-01-12T09:02:01 WARN  [db] # slow query: SELECT o.id,o.buyer_id,o.amount FROM orders o JOIN order_items i ON i.order_id=o.id WHERE o.status=? took 1200ms rows_examined=824993
+2026-01-12T09:02:01 WARN  [db] mysqld CPU above threshold: db_cpu=96% threads_running=58 slow_queries=219
+2026-01-12T09:02:02 WARN  [db] # slow query: SELECT o.id,o.buyer_id,o.amount FROM orders o JOIN order_items i ON i.order_id=o.id WHERE o.status=? took 1200ms rows_examined=5602434
+2026-01-12T09:02:03 ERROR [app] HikariPool-1 - Connection is not available, request timed out after 400ms (total=10, active=10, idle=0, waiting=6)
+2026-01-12T09:02:03 WARN  [db] # slow query: SELECT o.id,o.buyer_id,o.amount FROM orders o JOIN order_items i ON i.order_id=o.id WHERE o.status=? took 1200ms rows_examined=2466549
+2026-01-12T09:02:04 WARN  [db] # slow query: SELECT o.id,o.buyer_id,o.amount FROM orders o JOIN order_items i ON i.order_id=o.id WHERE o.status=? took 1200ms rows_examined=7590656
+2026-01-12T09:02:04 WARN  [db] mysqld CPU above threshold: db_cpu=96% threads_running=112 slow_queries=228
+2026-01-12T09:02:05 WARN  [db] # slow query: SELECT o.id,o.buyer_id,o.amount FROM orders o JOIN order_items i ON i.order_id=o.id WHERE o.status=? took 1200ms rows_examined=6488298
+2026-01-12T09:02:05 WARN  [db] mysqld CPU above threshold: db_cpu=96% threads_running=74 slow_queries=229
+2026-01-12T09:02:06 ERROR [app] HikariPool-1 - Connection is not available, request timed out after 400ms (total=10, active=10, idle=0, waiting=4)
+2026-01-12T09:02:06 WARN  [db] # slow query: SELECT o.id,o.buyer_id,o.amount FROM orders o JOIN order_items i ON i.order_id=o.id WHERE o.status=? took 1200ms rows_examined=1728471
+2026-01-12T09:02:07 ERROR [app] HikariPool-1 - Connection is not available, request timed out after 400ms (total=10, active=10, idle=0, waiting=6)
+2026-01-12T09:02:07 WARN  [db] # slow query: SELECT o.id,o.buyer_id,o.amount FROM orders o JOIN order_items i ON i.order_id=o.id WHERE o.status=? took 1200ms rows_examined=6689320
+2026-01-12T09:02:08 WARN  [db] # slow query: SELECT o.id,o.buyer_id,o.amount FROM orders o JOIN order_items i ON i.order_id=o.id WHERE o.status=? took 1200ms rows_examined=4916212
+2026-01-12T09:02:09 ERROR [app] HikariPool-1 - Connection is not available, request timed out after 400ms (total=10, active=10, idle=0, waiting=6)
+2026-01-12T09:02:09 WARN  [db] # slow query: SELECT o.id,o.buyer_id,o.amount FROM orders o JOIN order_items i ON i.order_id=o.id WHERE o.status=? took 1200ms rows_examined=4543000
+2026-01-12T09:02:09 WARN  [db] mysqld CPU above threshold: db_cpu=96% threads_running=84 slow_queries=241
+2026-01-12T09:02:11 ERROR [app] HikariPool-1 - Connection is not available, request timed out after 400ms (total=10, active=10, idle=0, waiting=2)
+2026-01-12T09:02:11 WARN  [db] # slow query: SELECT o.id,o.buyer_id,o.amount FROM orders o JOIN order_items i ON i.order_id=o.id WHERE o.status=? took 1200ms rows_examined=5897553
+2026-01-12T09:02:11 WARN  [db] mysqld CPU above threshold: db_cpu=96% threads_running=117 slow_queries=246
+2026-01-12T09:02:12 ERROR [app] HikariPool-1 - Connection is not available, request timed out after 400ms (total=10, active=10, idle=0, waiting=8)
+2026-01-12T09:02:12 WARN  [db] # slow query: SELECT o.id,o.buyer_id,o.amount FROM orders o JOIN order_items i ON i.order_id=o.id WHERE o.status=? took 1200ms rows_examined=4201812
+2026-01-12T09:02:12 WARN  [db] mysqld CPU above threshold: db_cpu=96% threads_running=120 slow_queries=248
+2026-01-12T09:02:13 WARN  [db] # slow query: SELECT o.id,o.buyer_id,o.amount FROM orders o JOIN order_items i ON i.order_id=o.id WHERE o.status=? took 1200ms rows_examined=8822238
+2026-01-12T09:02:14 ERROR [app] HikariPool-1 - Connection is not available, request timed out after 400ms (total=10, active=10, idle=0, waiting=12)
+2026-01-12T09:02:14 WARN  [db] # slow query: SELECT o.id,o.buyer_id,o.amount FROM orders o JOIN order_items i ON i.order_id=o.id WHERE o.status=? took 1200ms rows_examined=8018364
+2026-01-12T09:02:14 WARN  [db] mysqld CPU above threshold: db_cpu=96% threads_running=112 slow_queries=255
+2026-01-12T09:02:15 WARN  [db] # slow query: SELECT o.id,o.buyer_id,o.amount FROM orders o JOIN order_items i ON i.order_id=o.id WHERE o.status=? took 1200ms rows_examined=6936109
+2026-01-12T09:02:16 ERROR [app] HikariPool-1 - Connection is not available, request timed out after 400ms (total=10, active=10, idle=0, waiting=4)
+2026-01-12T09:02:16 WARN  [db] # slow query: SELECT o.id,o.buyer_id,o.amount FROM orders o JOIN order_items i ON i.order_id=o.id WHERE o.status=? took 1200ms rows_examined=3114684
+2026-01-12T09:02:17 WARN  [db] # slow query: SELECT o.id,o.buyer_id,o.amount FROM orders o JOIN order_items i ON i.order_id=o.id WHERE o.status=? took 1200ms rows_examined=641731
+2026-01-12T09:02:18 ERROR [app] HikariPool-1 - Connection is not available, request timed out after 400ms (total=10, active=10, idle=0, waiting=2)
+2026-01-12T09:02:18 WARN  [db] # slow query: SELECT o.id,o.buyer_id,o.amount FROM orders o JOIN order_items i ON i.order_id=o.id WHERE o.status=? took 1200ms rows_examined=2740857
+2026-01-12T09:02:19 ERROR [app] HikariPool-1 - Connection is not available, request timed out after 400ms (total=10, active=10, idle=0, waiting=1)
+2026-01-12T09:02:19 WARN  [db] # slow query: SELECT o.id,o.buyer_id,o.amount FROM orders o JOIN order_items i ON i.order_id=o.id WHERE o.status=? took 1200ms rows_examined=2361496
+2026-01-12T09:02:19 WARN  [db] mysqld CPU above threshold: db_cpu=96% threads_running=58 slow_queries=266
+2026-01-12T09:02:20 WARN  [db] # slow query: SELECT o.id,o.buyer_id,o.amount FROM orders o JOIN order_items i ON i.order_id=o.id WHERE o.status=? took 1200ms rows_examined=1962196
+2026-01-12T09:02:21 WARN  [db] # slow query: SELECT o.id,o.buyer_id,o.amount FROM orders o JOIN order_items i ON i.order_id=o.id WHERE o.status=? took 1200ms rows_examined=3365153
+2026-01-12T09:02:22 ERROR [app] HikariPool-1 - Connection is not available, request timed out after 400ms (total=10, active=10, idle=0, waiting=3)
+2026-01-12T09:02:22 WARN  [db] # slow query: SELECT o.id,o.buyer_id,o.amount FROM orders o JOIN order_items i ON i.order_id=o.id WHERE o.status=? took 1200ms rows_examined=3356517
+2026-01-12T09:02:23 WARN  [db] # slow query: SELECT o.id,o.buyer_id,o.amount FROM orders o JOIN order_items i ON i.order_id=o.id WHERE o.status=? took 1200ms rows_examined=8530246
+2026-01-12T09:02:23 WARN  [db] mysqld CPU above threshold: db_cpu=96% threads_running=50 slow_queries=274
+2026-01-12T09:02:24 WARN  [db] # slow query: SELECT o.id,o.buyer_id,o.amount FROM orders o JOIN order_items i ON i.order_id=o.id WHERE o.status=? took 1200ms rows_examined=575156
+2026-01-12T09:02:25 ERROR [app] HikariPool-1 - Connection is not available, request timed out after 400ms (total=10, active=10, idle=0, waiting=9)
+2026-01-12T09:02:25 WARN  [db] # slow query: SELECT o.id,o.buyer_id,o.amount FROM orders o JOIN order_items i ON i.order_id=o.id WHERE o.status=? took 1200ms rows_examined=7485427
+2026-01-12T09:02:26 ERROR [app] HikariPool-1 - Connection is not available, request timed out after 400ms (total=10, active=10, idle=0, waiting=3)
+2026-01-12T09:02:26 WARN  [db] # slow query: SELECT o.id,o.buyer_id,o.amount FROM orders o JOIN order_items i ON i.order_id=o.id WHERE o.status=? took 1200ms rows_examined=8306985
+2026-01-12T09:02:26 WARN  [db] mysqld CPU above threshold: db_cpu=96% threads_running=61 slow_queries=285
+2026-01-12T09:02:27 ERROR [app] HikariPool-1 - Connection is not available, request timed out after 400ms (total=10, active=10, idle=0, waiting=5)
+2026-01-12T09:02:27 WARN  [db] # slow query: SELECT o.id,o.buyer_id,o.amount FROM orders o JOIN order_items i ON i.order_id=o.id WHERE o.status=? took 1200ms rows_examined=8488078
+2026-01-12T09:02:28 ERROR [app] HikariPool-1 - Connection is not available, request timed out after 400ms (total=10, active=10, idle=0, waiting=2)
+2026-01-12T09:02:28 WARN  [db] # slow query: SELECT o.id,o.buyer_id,o.amount FROM orders o JOIN order_items i ON i.order_id=o.id WHERE o.status=? took 1200ms rows_examined=3181825
+2026-01-12T09:02:29 WARN  [db] # slow query: SELECT o.id,o.buyer_id,o.amount FROM orders o JOIN order_items i ON i.order_id=o.id WHERE o.status=? took 1200ms rows_examined=4762810
+2026-01-12T09:02:29 WARN  [db] mysqld CPU above threshold: db_cpu=96% threads_running=120 slow_queries=294
+2026-01-12T09:02:30 WARN  [db] # slow query: SELECT o.id,o.buyer_id,o.amount FROM orders o JOIN order_items i ON i.order_id=o.id WHERE o.status=? took 1200ms rows_examined=2999904
+2026-01-12T09:02:30 WARN  [db] mysqld CPU above threshold: db_cpu=96% threads_running=66 slow_queries=296
+2026-01-12T09:02:31 ERROR [app] HikariPool-1 - Connection is not available, request timed out after 400ms (total=10, active=10, idle=0, waiting=1)
+2026-01-12T09:02:31 WARN  [db] # slow query: SELECT o.id,o.buyer_id,o.amount FROM orders o JOIN order_items i ON i.order_id=o.id WHERE o.status=? took 1200ms rows_examined=957862
+2026-01-12T09:02:32 WARN  [db] # slow query: SELECT o.id,o.buyer_id,o.amount FROM orders o JOIN order_items i ON i.order_id=o.id WHERE o.status=? took 1200ms rows_examined=1004921
+2026-01-12T09:02:33 ERROR [app] HikariPool-1 - Connection is not available, request timed out after 400ms (total=10, active=10, idle=0, waiting=10)
+2026-01-12T09:02:33 WARN  [db] # slow query: SELECT o.id,o.buyer_id,o.amount FROM orders o JOIN order_items i ON i.order_id=o.id WHERE o.status=? took 1200ms rows_examined=664336
+2026-01-12T09:02:33 WARN  [db] mysqld CPU above threshold: db_cpu=96% threads_running=86 slow_queries=306
+2026-01-12T09:02:34 ERROR [app] HikariPool-1 - Connection is not available, request timed out after 400ms (total=10, active=10, idle=0, waiting=11)
+2026-01-12T09:02:34 WARN  [db] # slow query: SELECT o.id,o.buyer_id,o.amount FROM orders o JOIN order_items i ON i.order_id=o.id WHERE o.status=? took 1200ms rows_examined=5013844
+2026-01-12T09:02:35 ERROR [app] HikariPool-1 - Connection is not available, request timed out after 400ms (total=10, active=10, idle=0, waiting=9)
+2026-01-12T09:02:35 WARN  [db] # slow query: SELECT o.id,o.buyer_id,o.amount FROM orders o JOIN order_items i ON i.order_id=o.id WHERE o.status=? took 1200ms rows_examined=8979591
+2026-01-12T09:02:35 WARN  [db] mysqld CPU above threshold: db_cpu=96% threads_running=61 slow_queries=318
+2026-01-12T09:02:36 WARN  [db] # slow query: SELECT o.id,o.buyer_id,o.amount FROM orders o JOIN order_items i ON i.order_id=o.id WHERE o.status=? took 1200ms rows_examined=1874688
+2026-01-12T09:02:37 ERROR [app] HikariPool-1 - Connection is not available, request timed out after 400ms (total=10, active=10, idle=0, waiting=1)
+2026-01-12T09:02:37 WARN  [db] # slow query: SELECT o.id,o.buyer_id,o.amount FROM orders o JOIN order_items i ON i.order_id=o.id WHERE o.status=? took 1200ms rows_examined=5912045
+2026-01-12T09:02:37 WARN  [db] mysqld CPU above threshold: db_cpu=96% threads_running=98 slow_queries=322
+2026-01-12T09:02:38 WARN  [db] # slow query: SELECT o.id,o.buyer_id,o.amount FROM orders o JOIN order_items i ON i.order_id=o.id WHERE o.status=? took 1200ms rows_examined=5212873
+2026-01-12T09:02:39 WARN  [db] # slow query: SELECT o.id,o.buyer_id,o.amount FROM orders o JOIN order_items i ON i.order_id=o.id WHERE o.status=? took 1200ms rows_examined=6022809
+2026-01-12T09:02:39 WARN  [db] mysqld CPU above threshold: db_cpu=96% threads_running=47 slow_queries=332
+2026-01-12T09:02:40 ERROR [app] HikariPool-1 - Connection is not available, request timed out after 400ms (total=10, active=10, idle=0, waiting=11)
+2026-01-12T09:02:40 WARN  [db] # slow query: SELECT o.id,o.buyer_id,o.amount FROM orders o JOIN order_items i ON i.order_id=o.id WHERE o.status=? took 1200ms rows_examined=4074614
+2026-01-12T09:02:41 ERROR [app] HikariPool-1 - Connection is not available, request timed out after 400ms (total=10, active=10, idle=0, waiting=2)
+2026-01-12T09:02:41 WARN  [db] # slow query: SELECT o.id,o.buyer_id,o.amount FROM orders o JOIN order_items i ON i.order_id=o.id WHERE o.status=? took 1200ms rows_examined=1991369
+2026-01-12T09:02:42 ERROR [app] HikariPool-1 - Connection is not available, request timed out after 400ms (total=10, active=10, idle=0, waiting=13)
+2026-01-12T09:02:42 WARN  [db] # slow query: SELECT o.id,o.buyer_id,o.amount FROM orders o JOIN order_items i ON i.order_id=o.id WHERE o.status=? took 1200ms rows_examined=5840778
+2026-01-12T09:02:42 WARN  [db] mysqld CPU above threshold: db_cpu=96% threads_running=74 slow_queries=344
+2026-01-12T09:02:43 ERROR [app] HikariPool-1 - Connection is not available, request timed out after 400ms (total=10, active=10, idle=0, waiting=7)
+2026-01-12T09:02:43 WARN  [db] # slow query: SELECT o.id,o.buyer_id,o.amount FROM orders o JOIN order_items i ON i.order_id=o.id WHERE o.status=? took 1200ms rows_examined=6104651
+2026-01-12T09:02:44 ERROR [app] HikariPool-1 - Connection is not available, request timed out after 400ms (total=10, active=10, idle=0, waiting=5)
+2026-01-12T09:02:44 WARN  [db] # slow query: SELECT o.id,o.buyer_id,o.amount FROM orders o JOIN order_items i ON i.order_id=o.id WHERE o.status=? took 1200ms rows_examined=2060262
+2026-01-12T09:02:44 WARN  [db] mysqld CPU above threshold: db_cpu=96% threads_running=50 slow_queries=351
+2026-01-12T09:02:45 ERROR [app] HikariPool-1 - Connection is not available, request timed out after 400ms (total=10, active=10, idle=0, waiting=12)
+2026-01-12T09:02:45 WARN  [db] # slow query: SELECT o.id,o.buyer_id,o.amount FROM orders o JOIN order_items i ON i.order_id=o.id WHERE o.status=? took 1200ms rows_examined=1905450
+2026-01-12T09:02:46 WARN  [db] # slow query: SELECT o.id,o.buyer_id,o.amount FROM orders o JOIN order_items i ON i.order_id=o.id WHERE o.status=? took 1200ms rows_examined=4062862
+2026-01-12T09:02:47 ERROR [app] HikariPool-1 - Connection is not available, request timed out after 400ms (total=10, active=10, idle=0, waiting=1)
+2026-01-12T09:02:47 WARN  [db] # slow query: SELECT o.id,o.buyer_id,o.amount FROM orders o JOIN order_items i ON i.order_id=o.id WHERE o.status=? took 1200ms rows_examined=2515825
+2026-01-12T09:02:47 WARN  [db] mysqld CPU above threshold: db_cpu=96% threads_running=55 slow_queries=361
+2026-01-12T09:02:48 ERROR [app] HikariPool-1 - Connection is not available, request timed out after 400ms (total=10, active=10, idle=0, waiting=9)
+2026-01-12T09:02:48 WARN  [db] # slow query: SELECT o.id,o.buyer_id,o.amount FROM orders o JOIN order_items i ON i.order_id=o.id WHERE o.status=? took 1200ms rows_examined=2647805
+2026-01-12T09:02:48 WARN  [db] mysqld CPU above threshold: db_cpu=96% threads_running=109 slow_queries=365
+2026-01-12T09:02:49 WARN  [db] # slow query: SELECT o.id,o.buyer_id,o.amount FROM orders o JOIN order_items i ON i.order_id=o.id WHERE o.status=? took 1200ms rows_examined=1778164
+2026-01-12T09:02:51 INFO  [app] order/list handled in 12ms cache=hit status=200
+2026-01-12T09:02:52 INFO  [app] order/list handled in 12ms cache=hit status=200
+2026-01-12T09:02:55 INFO  [app] order/list handled in 12ms cache=hit status=200
+2026-01-12T09:02:56 INFO  [app] order/list handled in 12ms cache=hit status=200
+2026-01-12T09:03:01 INFO  [app] order/list handled in 12ms cache=hit status=200
+2026-01-12T09:03:04 INFO  [app] order/list handled in 12ms cache=hit status=200
+2026-01-12T09:03:11 INFO  [app] order/list handled in 12ms cache=hit status=200
+2026-01-12T09:03:12 INFO  [app] order/list handled in 12ms cache=miss status=200
+2026-01-12T09:03:14 INFO  [app] order/list handled in 12ms cache=hit status=200
+2026-01-12T09:03:19 INFO  [app] order/list handled in 12ms cache=hit status=200
+2026-01-12T09:03:22 INFO  [app] order/list handled in 12ms cache=hit status=200
+2026-01-12T09:03:23 INFO  [app] order/list handled in 12ms cache=hit status=200
+2026-01-12T09:03:32 INFO  [app] order/list handled in 12ms cache=hit status=200
+2026-01-12T09:03:34 INFO  [app] order/list handled in 12ms cache=hit status=200
+2026-01-12T09:03:40 INFO  [app] order/list handled in 12ms cache=hit status=200
+2026-01-12T09:03:49 INFO  [app] order/list handled in 12ms cache=miss status=200
+2026-01-12T09:03:54 INFO  [app] order/list handled in 12ms cache=hit status=200
+2026-01-12T09:03:55 INFO  [app] order/list handled in 12ms cache=hit status=200
+2026-01-12T09:03:57 INFO  [app] order/list handled in 12ms cache=hit status=200
+2026-01-12T09:04:05 INFO  [app] order/list handled in 12ms cache=hit status=200
+2026-01-12T09:04:09 INFO  [app] order/list handled in 12ms cache=hit status=200
+2026-01-12T09:04:10 INFO  [app] order/list handled in 12ms cache=miss status=200
+2026-01-12T09:04:11 INFO  [app] order/list handled in 12ms cache=hit status=200
+2026-01-12T09:04:12 INFO  [app] order/list handled in 12ms cache=hit status=200
+2026-01-12T09:04:17 INFO  [app] order/list handled in 12ms cache=hit status=200

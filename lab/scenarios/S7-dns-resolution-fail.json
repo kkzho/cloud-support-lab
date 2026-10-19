@@ -1,0 +1,76 @@
+{
+  "id": "S7-dns-resolution-fail",
+  "name": "DNS 解析异常",
+  "short": "dns",
+  "service": "network",
+  "description": "集群 DNS/CoreDNS 解析异常，下游域名间歇性解析超时，业务出现间歇性 5xx 与连接超时。",
+  "total_ticks": 260,
+  "pre_ticks": 40,
+  "fault_ticks": 130,
+  "tick_sleep_s": 0.03,
+  "fault_params": {
+    "dns_fail_rate": 0.3,
+    "dns_timeout_ms": 340.0
+  },
+  "expected_signals": [
+    "http_requests_total{status=\"5xx\"} 间歇性升高（约 30%）",
+    "http_request_duration_ms_p99 抬升到解析超时量级",
+    "app 日志出现 'nameserver ... timeout' / 'getaddrinfo ENOTFOUND'",
+    "节点资源指标正常"
+  ],
+  "root_cause_hints": [
+    "确认 CoreDNS / resolv.conf 与 ndots 配置",
+    "对比失败请求的耗时分布是否卡在解析阶段（解析超时 3s）",
+    "排查 DNS 上游不可达或 search domain 导致的解析放大"
+  ],
+  "baseline_params": {
+    "rps": 120.0,
+    "app_workers": 16,
+    "timeout_ms": 600.0,
+    "conn_pool_size": 10,
+    "leaked_conns": 0,
+    "conn_timeout_ms": 400.0,
+    "node_cpu_target": 25.0,
+    "cpu_service_mult": 3.2,
+    "node_mem_target": 42.0,
+    "mem_leak_rate": 0.0,
+    "oom_enabled": false,
+    "mem_cap": 100.0,
+    "node_disk_target": 55.0,
+    "disk_fill_rate": 0.0,
+    "node_inode_target": 30.0,
+    "inode_fill_rate": 0.0,
+    "fs_cap": 100.0,
+    "db_base_ms": 150.0,
+    "db_cpu_target": 22.0,
+    "db_slow_query_rate": 0.0,
+    "db_slow_query_ms": 0.0,
+    "db_max_conns": 100,
+    "healthcheck_fail": false,
+    "lb_drop_ratio": 0.0,
+    "dns_fail_rate": 0.0,
+    "dns_timeout_ms": 340.0,
+    "cache_base_ms": 3.0,
+    "cache_hit_ratio": 0.85,
+    "cache_hotkey": false,
+    "cache_hotkey_ms": 220.0,
+    "cache_hotkey_prob": 0.6,
+    "cache_timeout_rate": 0.0,
+    "cache_timeout_ms": 520.0,
+    "request_base_ms": 6.0
+  },
+  "phase_boundaries": {
+    "pre": [
+      0,
+      40
+    ],
+    "fault": [
+      40,
+      170
+    ],
+    "post": [
+      170,
+      260
+    ]
+  }
+}

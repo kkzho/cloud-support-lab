@@ -1,0 +1,60 @@
+2026-01-12T09:00:07 INFO  [app] order/list handled in 12ms cache=hit status=200
+2026-01-12T09:00:09 INFO  [app] order/list handled in 12ms cache=hit status=200
+2026-01-12T09:00:17 INFO  [app] order/list handled in 12ms cache=hit status=200
+2026-01-12T09:00:19 INFO  [app] order/list handled in 12ms cache=miss status=200
+2026-01-12T09:00:26 INFO  [app] order/list handled in 12ms cache=hit status=200
+2026-01-12T09:00:32 INFO  [app] order/list handled in 12ms cache=hit status=200
+2026-01-12T09:00:33 INFO  [app] order/list handled in 12ms cache=hit status=200
+2026-01-12T09:00:35 INFO  [app] order/list handled in 12ms cache=hit status=200
+2026-01-12T09:00:37 INFO  [app] order/list handled in 12ms cache=miss status=200
+2026-01-12T09:00:38 INFO  [app] order/list handled in 12ms cache=hit status=200
+2026-01-12T09:00:42 INFO  [app] order/list handled in 12ms cache=hit status=200
+2026-01-12T09:00:43 INFO  [app] order/list handled in 12ms cache=hit status=200
+2026-01-12T09:00:50 INFO  [app] order/list handled in 12ms cache=hit status=200
+2026-01-12T09:00:58 INFO  [app] order/list handled in 12ms cache=hit status=200
+2026-01-12T09:01:01 INFO  [app] order/list handled in 12ms cache=hit status=200
+2026-01-12T09:01:02 INFO  [app] order/list handled in 12ms cache=hit status=200
+2026-01-12T09:01:04 INFO  [app] order/list handled in 12ms cache=hit status=200
+2026-01-12T09:01:09 INFO  [app] order/list handled in 12ms cache=hit status=200
+2026-01-12T09:01:11 INFO  [app] order/list handled in 12ms cache=miss status=200
+2026-01-12T09:01:14 ERROR [kernel] Out of memory: Killed process 8693 (java) total-vm:3173727kB anon-rss:2809384kB container=app memory limit exceeded at 100%
+2026-01-12T09:01:14 WARN  [kubelet] Container app failed with Reason OOMKilled (exit code 137); restarting container 1 time(s)
+2026-01-12T09:01:27 INFO  [app] order/list handled in 12ms cache=hit status=200
+2026-01-12T09:01:40 INFO  [app] order/list handled in 12ms cache=hit status=200
+2026-01-12T09:01:44 INFO  [app] order/list handled in 12ms cache=hit status=200
+2026-01-12T09:01:48 INFO  [app] order/list handled in 12ms cache=hit status=200
+2026-01-12T09:01:50 INFO  [app] order/list handled in 12ms cache=hit status=200
+2026-01-12T09:01:51 INFO  [app] order/list handled in 12ms cache=hit status=200
+2026-01-12T09:01:55 ERROR [kernel] Out of memory: Killed process 8556 (java) total-vm:3862560kB anon-rss:3217947kB container=app memory limit exceeded at 100%
+2026-01-12T09:01:55 WARN  [kubelet] Container app failed with Reason OOMKilled (exit code 137); restarting container 2 time(s)
+2026-01-12T09:01:59 INFO  [app] order/list handled in 12ms cache=hit status=200
+2026-01-12T09:02:22 INFO  [app] order/list handled in 12ms cache=hit status=200
+2026-01-12T09:02:23 INFO  [app] order/list handled in 12ms cache=miss status=200
+2026-01-12T09:02:24 INFO  [app] order/list handled in 12ms cache=hit status=200
+2026-01-12T09:02:25 INFO  [app] order/list handled in 12ms cache=hit status=200
+2026-01-12T09:02:34 INFO  [app] order/list handled in 12ms cache=hit status=200
+2026-01-12T09:02:36 ERROR [kernel] Out of memory: Killed process 7148 (java) total-vm:3591137kB anon-rss:2952492kB container=app memory limit exceeded at 100%
+2026-01-12T09:02:36 WARN  [kubelet] Container app failed with Reason OOMKilled (exit code 137); restarting container 3 time(s)
+2026-01-12T09:02:37 INFO  [app] order/list handled in 12ms cache=miss status=200
+2026-01-12T09:02:42 INFO  [app] order/list handled in 12ms cache=hit status=200
+2026-01-12T09:03:04 INFO  [app] order/list handled in 12ms cache=hit status=200
+2026-01-12T09:03:06 INFO  [app] order/list handled in 12ms cache=hit status=200
+2026-01-12T09:03:07 INFO  [app] order/list handled in 12ms cache=miss status=200
+2026-01-12T09:03:11 INFO  [app] order/list handled in 12ms cache=hit status=200
+2026-01-12T09:03:12 INFO  [app] order/list handled in 12ms cache=miss status=200
+2026-01-12T09:03:16 INFO  [app] order/list handled in 12ms cache=miss status=200
+2026-01-12T09:03:19 INFO  [app] order/list handled in 12ms cache=hit status=200
+2026-01-12T09:03:25 INFO  [app] order/list handled in 12ms cache=hit status=200
+2026-01-12T09:03:37 INFO  [app] order/list handled in 12ms cache=hit status=200
+2026-01-12T09:03:39 INFO  [app] order/list handled in 12ms cache=hit status=200
+2026-01-12T09:03:40 INFO  [app] order/list handled in 12ms cache=hit status=200
+2026-01-12T09:03:49 INFO  [app] order/list handled in 12ms cache=miss status=200
+2026-01-12T09:03:52 INFO  [app] order/list handled in 12ms cache=hit status=200
+2026-01-12T09:03:53 INFO  [app] order/list handled in 12ms cache=hit status=200
+2026-01-12T09:04:02 INFO  [app] order/list handled in 12ms cache=hit status=200
+2026-01-12T09:04:05 INFO  [app] order/list handled in 12ms cache=hit status=200
+2026-01-12T09:04:06 INFO  [app] order/list handled in 12ms cache=hit status=200
+2026-01-12T09:04:10 INFO  [app] order/list handled in 12ms cache=hit status=200
+2026-01-12T09:04:12 INFO  [app] order/list handled in 12ms cache=miss status=200
+2026-01-12T09:04:15 INFO  [app] order/list handled in 12ms cache=hit status=200
+2026-01-12T09:04:19 INFO  [app] order/list handled in 12ms cache=hit status=200

@@ -1,0 +1,15 @@
+# Auto-provisioned dashboard provider: loads every dashboard JSON under
+# /var/lib/grafana/dashboards/order-api (mounted from ops/grafana/dashboard.json).
+apiVersion: 1
+
+providers:
+  - name: cloud-support-lab
+    orgId: 1
+    folder: "云厂商售后技术支持"
+    type: file
+    disableDeletion: false
+    updateIntervalSeconds: 30
+    allowUiUpdates: true
+    options:
+      path: /var/lib/grafana/dashboards/order-api
+      foldersFromFilesStructure: false

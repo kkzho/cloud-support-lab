@@ -1,0 +1,184 @@
+{
+  "title": "云厂商售后技术支持 · 三层业务故障演练看板",
+  "description": "订单服务（SLB -> app -> cache/db + node）故障演练总览。指标名与 lab/sim/app.py 导出的 Prometheus 指标一致。",
+  "uid": "cloud-support-lab-drill",
+  "tags": ["cloud-support-lab", "drill", "sre"],
+  "schemaVersion": 39,
+  "version": 1,
+  "refresh": "10s",
+  "editable": true,
+  "time": { "from": "now-15m", "to": "now" },
+  "timezone": "browser",
+  "templating": {
+    "list": [
+      {
+        "name": "DS_PROMETHEUS",
+        "label": "Prometheus",
+        "type": "datasource",
+        "query": "prometheus",
+        "current": { "text": "Prometheus", "value": "prometheus" },
+        "hide": 0,
+        "includeAll": false
+      }
+    ]
+  },
+  "panels": [
+    {
+      "id": 1,
+      "type": "timeseries",
+      "title": "请求量（按状态码分类）",
+      "gridPos": { "h": 8, "w": 12, "x": 0, "y": 0 },
+      "datasource": { "type": "prometheus", "uid": "${DS_PROMETHEUS}" },
+      "fieldConfig": { "defaults": { "unit": "reqps" }, "overrides": [] },
+      "targets": [
+        { "refId": "A", "expr": "sum(rate(http_requests_total[1m])) by (status)", "legendFormat": "status={{status}}" }
+      ]
+    },
+    {
+      "id": 2,
+      "type": "timeseries",
+      "title": "5xx 错误率",
+      "gridPos": { "h": 8, "w": 12, "x": 12, "y": 0 },
+      "datasource": { "type": "prometheus", "uid": "${DS_PROMETHEUS}" },
+      "fieldConfig": { "defaults": { "unit": "percentunit", "min": 0 }, "overrides": [] },
+      "targets": [
+        {
+          "refId": "A",
+          "expr": "sum(rate(http_requests_total{status=\"5xx\"}[1m])) / clamp_min(sum(rate(http_requests_total[1m])), 1)",
+          "legendFormat": "5xx ratio"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "type": "timeseries",
+      "title": "接口延迟 P50 / P95 / P99 (ms)",
+      "gridPos": { "h": 8, "w": 12, "x": 0, "y": 8 },
+      "datasource": { "type": "prometheus", "uid": "${DS_PROMETHEUS}" },
+      "fieldConfig": { "defaults": { "unit": "ms" }, "overrides": [] },
+      "targets": [
+        { "refId": "A", "expr": "http_request_duration_ms_p50", "legendFormat": "p50" },
+        { "refId": "B", "expr": "http_request_duration_ms_p95", "legendFormat": "p95" },
+        { "refId": "C", "expr": "http_request_duration_ms_p99", "legendFormat": "p99" }
+      ]
+    },
+    {
+      "id": 4,
+      "type": "timeseries",
+      "title": "连接池使用率（app -> DB）",
+      "gridPos": { "h": 8, "w": 12, "x": 12, "y": 8 },
+      "datasource": { "type": "prometheus", "uid": "${DS_PROMETHEUS}" },
+      "fieldConfig": { "defaults": { "unit": "short" }, "overrides": [] },
+      "targets": [
+        { "refId": "A", "expr": "app_conn_pool_in_use", "legendFormat": "in_use" },
+        { "refId": "B", "expr": "app_conn_pool_size", "legendFormat": "size" },
+        {
+          "refId": "C",
+          "expr": "app_conn_pool_in_use / clamp_min(app_conn_pool_size, 1)",
+          "legendFormat": "usage_ratio"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "type": "timeseries",
+      "title": "Worker 池忙线程数",
+      "gridPos": { "h": 8, "w": 12, "x": 0, "y": 16 },
+      "datasource": { "type": "prometheus", "uid": "${DS_PROMETHEUS}" },
+      "fieldConfig": { "defaults": { "unit": "short" }, "overrides": [] },
+      "targets": [
+        { "refId": "A", "expr": "app_worker_busy", "legendFormat": "busy workers" }
+      ]
+    },
+    {
+      "id": 6,
+      "type": "timeseries",
+      "title": "数据库 CPU 与连接数",
+      "gridPos": { "h": 8, "w": 12, "x": 12, "y": 16 },
+      "datasource": { "type": "prometheus", "uid": "${DS_PROMETHEUS}" },
+      "fieldConfig": { "defaults": { "unit": "short" }, "overrides": [] },
+      "targets": [
+        { "refId": "A", "expr": "db_cpu_percent", "legendFormat": "db_cpu_%" },
+        { "refId": "B", "expr": "db_connections_used", "legendFormat": "connections_used" },
+        { "refId": "C", "expr": "db_connections_max", "legendFormat": "connections_max" }
+      ]
+    },
+    {
+      "id": 7,
+      "type": "timeseries",
+      "title": "节点 CPU / 内存使用率",
+      "gridPos": { "h": 8, "w": 12, "x": 0, "y": 24 },
+      "datasource": { "type": "prometheus", "uid": "${DS_PROMETHEUS}" },
+      "fieldConfig": { "defaults": { "unit": "percent", "max": 100 }, "overrides": [] },
+      "targets": [
+        { "refId": "A", "expr": "node_cpu_percent", "legendFormat": "cpu %" },
+        { "refId": "B", "expr": "node_mem_percent", "legendFormat": "mem %" }
+      ]
+    },
+    {
+      "id": 8,
+      "type": "timeseries",
+      "title": "节点磁盘空间 / inode 使用率",
+      "gridPos": { "h": 8, "w": 12, "x": 12, "y": 24 },
+      "datasource": { "type": "prometheus", "uid": "${DS_PROMETHEUS}" },
+      "fieldConfig": { "defaults": { "unit": "percent", "max": 100 }, "overrides": [] },
+      "targets": [
+        { "refId": "A", "expr": "node_disk_percent", "legendFormat": "disk %" },
+        { "refId": "B", "expr": "node_inode_percent", "legendFormat": "inode %" }
+      ]
+    },
+    {
+      "id": 9,
+      "type": "timeseries",
+      "title": "缓存延迟与命中率",
+      "gridPos": { "h": 8, "w": 12, "x": 0, "y": 32 },
+      "datasource": { "type": "prometheus", "uid": "${DS_PROMETHEUS}" },
+      "fieldConfig": {
+        "defaults": { "unit": "short" },
+        "overrides": [
+          { "matcher": { "id": "byName", "options": "hit_ratio" }, "properties": [ { "id": "unit", "value": "percentunit" } ] }
+        ]
+      },
+      "targets": [
+        { "refId": "A", "expr": "cache_latency_ms", "legendFormat": "cache_latency_ms" },
+        { "refId": "B", "expr": "cache_hit_ratio", "legendFormat": "hit_ratio" }
+      ]
+    },
+    {
+      "id": 10,
+      "type": "timeseries",
+      "title": "容器重启次数",
+      "gridPos": { "h": 8, "w": 12, "x": 12, "y": 32 },
+      "datasource": { "type": "prometheus", "uid": "${DS_PROMETHEUS}" },
+      "fieldConfig": { "defaults": { "unit": "short" }, "overrides": [] },
+      "targets": [
+        { "refId": "A", "expr": "container_restarts_total", "legendFormat": "restarts_total" },
+        { "refId": "B", "expr": "increase(container_restarts_total[5m])", "legendFormat": "restarts_5m" }
+      ]
+    },
+    {
+      "id": 11,
+      "type": "timeseries",
+      "title": "网关 5xx（502/504）",
+      "gridPos": { "h": 8, "w": 12, "x": 0, "y": 40 },
+      "datasource": { "type": "prometheus", "uid": "${DS_PROMETHEUS}" },
+      "fieldConfig": { "defaults": { "unit": "short" }, "overrides": [] },
+      "targets": [
+        { "refId": "A", "expr": "rate(gateway_upstream_5xx_total[1m])", "legendFormat": "gateway_5xx_rate" },
+        { "refId": "B", "expr": "gateway_upstream_5xx_total", "legendFormat": "gateway_5xx_total" }
+      ]
+    },
+    {
+      "id": 12,
+      "type": "timeseries",
+      "title": "数据库慢查询速率",
+      "gridPos": { "h": 8, "w": 12, "x": 12, "y": 40 },
+      "datasource": { "type": "prometheus", "uid": "${DS_PROMETHEUS}" },
+      "fieldConfig": { "defaults": { "unit": "short" }, "overrides": [] },
+      "targets": [
+        { "refId": "A", "expr": "rate(db_slow_queries_total[1m])", "legendFormat": "slow_query/s" },
+        { "refId": "B", "expr": "db_slow_queries_total", "legendFormat": "slow_total" }
+      ]
+    }
+  ]
+}

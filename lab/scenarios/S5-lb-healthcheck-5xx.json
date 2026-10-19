@@ -1,0 +1,76 @@
+{
+  "id": "S5-lb-healthcheck-5xx",
+  "name": "负载均衡后端健康检查失败",
+  "short": "healthcheck",
+  "service": "slb",
+  "description": "SLB 健康检查探针失败，后端被摘除，网关大量返回 502/504，但后端实例本身资源指标正常。",
+  "total_ticks": 240,
+  "pre_ticks": 40,
+  "fault_ticks": 120,
+  "tick_sleep_s": 0.03,
+  "fault_params": {
+    "healthcheck_fail": true,
+    "lb_drop_ratio": 0.5
+  },
+  "expected_signals": [
+    "gateway_upstream_5xx_total 大幅增长",
+    "业务接口到达量（http_requests_total）下降",
+    "app 自身 node_cpu/mem 正常",
+    "nginx 日志出现 upstream timed out / 502 / 504"
+  ],
+  "root_cause_hints": [
+    "检查 SLB 健康检查配置与后端 /healthz 实际返回码",
+    "对比后端资源指标（正常）与网关 5xx（异常）锁定在接入层",
+    "确认健康检查路径/超时/阈值是否与业务行为一致"
+  ],
+  "baseline_params": {
+    "rps": 120.0,
+    "app_workers": 16,
+    "timeout_ms": 600.0,
+    "conn_pool_size": 10,
+    "leaked_conns": 0,
+    "conn_timeout_ms": 400.0,
+    "node_cpu_target": 25.0,
+    "cpu_service_mult": 3.2,
+    "node_mem_target": 42.0,
+    "mem_leak_rate": 0.0,
+    "oom_enabled": false,
+    "mem_cap": 100.0,
+    "node_disk_target": 55.0,
+    "disk_fill_rate": 0.0,
+    "node_inode_target": 30.0,
+    "inode_fill_rate": 0.0,
+    "fs_cap": 100.0,
+    "db_base_ms": 150.0,
+    "db_cpu_target": 22.0,
+    "db_slow_query_rate": 0.0,
+    "db_slow_query_ms": 0.0,
+    "db_max_conns": 100,
+    "healthcheck_fail": false,
+    "lb_drop_ratio": 0.0,
+    "dns_fail_rate": 0.0,
+    "dns_timeout_ms": 340.0,
+    "cache_base_ms": 3.0,
+    "cache_hit_ratio": 0.85,
+    "cache_hotkey": false,
+    "cache_hotkey_ms": 220.0,
+    "cache_hotkey_prob": 0.6,
+    "cache_timeout_rate": 0.0,
+    "cache_timeout_ms": 520.0,
+    "request_base_ms": 6.0
+  },
+  "phase_boundaries": {
+    "pre": [
+      0,
+      40
+    ],
+    "fault": [
+      40,
+      160
+    ],
+    "post": [
+      160,
+      240
+    ]
+  }
+}

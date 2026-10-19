@@ -1,0 +1,171 @@
+# Alerting rules — one (or more) per fault scenario in lab/sim/scenarios.py.
+#
+# Metric names match those produced by lab/sim/app.py (/metrics and
+# evidence/<id>/metrics.csv). Each rule carries a `for` duration, a `severity`
+# label and annotations whose description embeds the first troubleshooting hint.
+groups:
+  - name: order-api-slo
+    rules:
+      # ---------------- S1: app instance CPU saturation ----------------
+      - alert: AppInstanceCpuSaturation
+        expr: node_cpu_percent > 90
+        for: 1m
+        labels:
+          severity: critical
+          service: order-api
+          scenario: S1-app-cpu-saturation
+        annotations:
+          summary: "订单服务实例 CPU 打满 ({{ $value | printf \"%.0f\" }}%)"
+          description: "app 实例 CPU 持续超过 90%。接口延迟会升高并出现超时。排查：top/cAdvisor 确认是否死循环或批量任务；结合 p95/p99 与 worker busy 判断是否需要扩容或限流。"
+
+      - alert: AppLatencyDegraded
+        expr: http_request_duration_ms_p99 > 800
+        for: 1m
+        labels:
+          severity: warning
+          service: order-api
+          scenario: S1-app-cpu-saturation
+        annotations:
+          summary: "订单服务 P99 延迟劣化 ({{ $value | printf \"%.0f\" }}ms)"
+          description: "P99 超过 800ms。排查：确认是应用 CPU 饱和还是下游依赖（DB/缓存/DNS）变慢导致。"
+
+      # ---------------- S2: DB connection pool exhaustion ----------------
+      - alert: DbConnectionPoolExhausted
+        expr: app_conn_pool_in_use / app_conn_pool_size > 0.9
+        for: 30s
+        labels:
+          severity: critical
+          service: order-api
+          scenario: S2-conn-pool-exhaustion
+        annotations:
+          summary: "数据库连接池接近耗尽 ({{ $value | printf \"%.0f\" }})"
+          description: "app 到 DB 的连接池使用率 > 90%。排查：检查是否存在连接泄漏或长事务（HikariPool 'Connection is not available'）；对照 MySQL Threads_connected / max_connections。"
+
+      # ---------------- S3: slow SQL / DB CPU ----------------------------
+      - alert: DbCpuSaturation
+        expr: db_cpu_percent > 90
+        for: 1m
+        labels:
+          severity: critical
+          service: order-db
+          scenario: S3-slow-sql-db-cpu
+        annotations:
+          summary: "数据库 CPU 飙升 ({{ $value | printf \"%.0f\" }}%)"
+          description: "DB CPU 持续 > 90%。排查：查慢查询日志与 EXPLAIN，确认是否缺失索引导致全表扫描；必要时加索引/改写 SQL。"
+
+      - alert: DbSlowQuerySurge
+        expr: increase(db_slow_queries_total[5m]) > 20
+        for: 1m
+        labels:
+          severity: warning
+          service: order-db
+          scenario: S3-slow-sql-db-cpu
+        annotations:
+          summary: "慢查询激增 (5m 新增 {{ $value | printf \"%.0f\" }})"
+          description: "5 分钟慢查询新增超过 20 条。排查：定位具体 SQL 并结合 db_connections_used 判断是否拖垮连接池。"
+
+      # ---------------- S4: memory leak -> OOMKilled ---------------------
+      - alert: ContainerMemoryPressure
+        expr: node_mem_percent > 90
+        for: 2m
+        labels:
+          severity: warning
+          service: order-api
+          scenario: S4-memory-leak-oomkill
+        annotations:
+          summary: "容器内存接近上限 ({{ $value | printf \"%.0f\" }}%)"
+          description: "内存持续 > 90%，随时可能 OOMKilled。排查：结合容器 RSS 增长曲线与 heap 分析定位泄漏源。"
+
+      - alert: ContainerRestartLoop
+        expr: increase(container_restarts_total[10m]) > 0
+        for: 0m
+        labels:
+          severity: critical
+          service: order-api
+          scenario: S4-memory-leak-oomkill
+        annotations:
+          summary: "容器发生重启 (10m 内 {{ $value | printf \"%.0f\" }} 次)"
+          description: "容器在 10 分钟内发生重启，多为 OOMKilled。排查：kubelet 事件/dmesg 找 'Out of memory: Killed process'，确认 limit 与泄漏点。"
+
+      # ---------------- S5: LB healthcheck failure -----------------------
+      - alert: GatewayUpstream5xxSurge
+        expr: increase(gateway_upstream_5xx_total[5m]) > 50
+        for: 1m
+        labels:
+          severity: critical
+          service: order-gateway
+          scenario: S5-lb-healthcheck-5xx
+        annotations:
+          summary: "网关 5xx 激增 (5m 新增 {{ $value | printf \"%.0f\" }})"
+          description: "网关 502/504 激增而业务侧指标正常，疑似后端被健康检查摘除。排查：核对 /healthz 返回码与 SLB 健康检查路径/超时/阈值（nginx 'upstream timed out'）。"
+
+      - alert: HealthcheckBackendDown
+        expr: sum(rate(http_requests_total[1m])) < 80
+          and on() (increase(gateway_upstream_5xx_total[1m]) > 0)
+        for: 1m
+        labels:
+          severity: warning
+          service: order-gateway
+          scenario: S5-lb-healthcheck-5xx
+        annotations:
+          summary: "后端健康检查失败"
+          description: "健康检查探针失败，后端被标记 DOWN。排查：确认探针路径、返回码、超时与业务行为一致性。"
+
+      # ---------------- S6: disk / inode full ----------------------------
+      - alert: NodeDiskSpaceFull
+        expr: node_disk_percent > 90
+        for: 1m
+        labels:
+          severity: critical
+          service: order-node
+          scenario: S6-disk-inode-full
+        annotations:
+          summary: "磁盘空间将满 ({{ $value | printf \"%.0f\" }}%)"
+          description: "磁盘使用率 > 90%，写入将失败（'No space left on device'）。排查：df -h 定位占满来源与 logrotate 是否失效。"
+
+      - alert: NodeInodeFull
+        expr: node_inode_percent > 90
+        for: 1m
+        labels:
+          severity: critical
+          service: order-node
+          scenario: S6-disk-inode-full
+        annotations:
+          summary: "inode 将耗尽 ({{ $value | printf \"%.0f\" }}%)"
+          description: "inode 使用率 > 90%。排查：df -i 定位大量小文件（日志/临时目录），清理并修复轮转。"
+
+      # ---------------- S7: DNS resolution failure -----------------------
+      - alert: DnsResolutionFailure
+        expr: sum(rate(http_requests_total{status="5xx"}[5m])) > 5
+          and on() (node_cpu_percent < 60)
+        for: 1m
+        labels:
+          severity: warning
+          service: order-api
+          scenario: S7-dns-resolution-fail
+        annotations:
+          summary: "间歇性 5xx 且节点资源正常"
+          description: "节点 CPU 正常但 5xx 抬升，疑似 DNS/CoreDNS 解析超时。排查：确认 resolv.conf/ndots 与 CoreDNS 上游；日志 'nameserver ... timeout'。"
+
+      # ---------------- S8: redis hot key / big key ----------------------
+      - alert: CacheLatencyDegraded
+        expr: cache_latency_ms > 50
+        for: 1m
+        labels:
+          severity: warning
+          service: order-cache
+          scenario: S8-redis-hotkey
+        annotations:
+          summary: "缓存延迟劣化 ({{ $value | printf \"%.0f\" }}ms)"
+          description: "缓存 P95 延迟 > 50ms，疑似热 key/大 key。排查：redis-cli --hotkeys/--bigkeys 定位，确认是否分片倾斜；对热 key 本地缓存或打散。"
+
+      - alert: CacheHitRatioDrop
+        expr: cache_hit_ratio < 0.8
+        for: 2m
+        labels:
+          severity: warning
+          service: order-cache
+          scenario: S8-redis-hotkey
+        annotations:
+          summary: "缓存命中率下降 ({{ $value | printf \"%.2f\" }})"
+          description: "命中率 < 0.8，回源压力上升。排查：确认是否热 key 超时导致回源，评估对大 key 拆分与本地缓存。"

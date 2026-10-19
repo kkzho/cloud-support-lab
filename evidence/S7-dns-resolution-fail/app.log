@@ -1,0 +1,165 @@
+2026-01-12T09:00:01 INFO  [app] order/list handled in 12ms cache=miss status=200
+2026-01-12T09:00:05 INFO  [app] order/list handled in 12ms cache=hit status=200
+2026-01-12T09:00:06 INFO  [app] order/list handled in 12ms cache=hit status=200
+2026-01-12T09:00:07 INFO  [app] order/list handled in 12ms cache=hit status=200
+2026-01-12T09:00:09 INFO  [app] order/list handled in 12ms cache=hit status=200
+2026-01-12T09:00:25 INFO  [app] order/list handled in 12ms cache=hit status=200
+2026-01-12T09:00:27 INFO  [app] order/list handled in 12ms cache=miss status=200
+2026-01-12T09:00:31 INFO  [app] order/list handled in 12ms cache=hit status=200
+2026-01-12T09:00:32 INFO  [app] order/list handled in 12ms cache=miss status=200
+2026-01-12T09:00:35 INFO  [app] order/list handled in 12ms cache=miss status=200
+2026-01-12T09:00:39 INFO  [app] order/list handled in 12ms cache=hit status=200
+2026-01-12T09:00:40 ERROR [app] getaddrinfo failed for 'order-db.svc.cluster.local': nameserver 10.96.0.10 timeout after 340ms
+2026-01-12T09:00:41 ERROR [app] getaddrinfo failed for 'order-db.svc.cluster.local': nameserver 10.96.0.10 timeout after 340ms
+2026-01-12T09:00:42 ERROR [app] getaddrinfo failed for 'order-db.svc.cluster.local': nameserver 10.96.0.10 timeout after 340ms
+2026-01-12T09:00:43 ERROR [app] getaddrinfo failed for 'order-db.svc.cluster.local': nameserver 10.96.0.10 timeout after 340ms
+2026-01-12T09:00:44 ERROR [app] getaddrinfo failed for 'order-db.svc.cluster.local': nameserver 10.96.0.10 timeout after 340ms
+2026-01-12T09:00:45 ERROR [app] getaddrinfo failed for 'order-db.svc.cluster.local': nameserver 10.96.0.10 timeout after 340ms
+2026-01-12T09:00:46 ERROR [app] getaddrinfo failed for 'order-db.svc.cluster.local': nameserver 10.96.0.10 timeout after 340ms
+2026-01-12T09:00:47 ERROR [app] getaddrinfo failed for 'order-db.svc.cluster.local': nameserver 10.96.0.10 timeout after 340ms
+2026-01-12T09:00:48 ERROR [app] getaddrinfo failed for 'order-db.svc.cluster.local': nameserver 10.96.0.10 timeout after 340ms
+2026-01-12T09:00:49 ERROR [app] getaddrinfo failed for 'order-db.svc.cluster.local': nameserver 10.96.0.10 timeout after 340ms
+2026-01-12T09:00:50 ERROR [app] getaddrinfo failed for 'order-db.svc.cluster.local': nameserver 10.96.0.10 timeout after 340ms
+2026-01-12T09:00:51 ERROR [app] getaddrinfo failed for 'order-db.svc.cluster.local': nameserver 10.96.0.10 timeout after 340ms
+2026-01-12T09:00:52 ERROR [app] getaddrinfo failed for 'order-db.svc.cluster.local': nameserver 10.96.0.10 timeout after 340ms
+2026-01-12T09:00:53 ERROR [app] getaddrinfo failed for 'order-db.svc.cluster.local': nameserver 10.96.0.10 timeout after 340ms
+2026-01-12T09:00:54 ERROR [app] getaddrinfo failed for 'order-db.svc.cluster.local': nameserver 10.96.0.10 timeout after 340ms
+2026-01-12T09:00:55 ERROR [app] getaddrinfo failed for 'order-db.svc.cluster.local': nameserver 10.96.0.10 timeout after 340ms
+2026-01-12T09:00:56 ERROR [app] getaddrinfo failed for 'order-db.svc.cluster.local': nameserver 10.96.0.10 timeout after 340ms
+2026-01-12T09:00:57 ERROR [app] getaddrinfo failed for 'order-db.svc.cluster.local': nameserver 10.96.0.10 timeout after 340ms
+2026-01-12T09:00:58 ERROR [app] getaddrinfo failed for 'order-db.svc.cluster.local': nameserver 10.96.0.10 timeout after 340ms
+2026-01-12T09:00:59 ERROR [app] getaddrinfo failed for 'order-db.svc.cluster.local': nameserver 10.96.0.10 timeout after 340ms
+2026-01-12T09:01:00 ERROR [app] getaddrinfo failed for 'order-db.svc.cluster.local': nameserver 10.96.0.10 timeout after 340ms
+2026-01-12T09:01:01 ERROR [app] getaddrinfo failed for 'order-db.svc.cluster.local': nameserver 10.96.0.10 timeout after 340ms
+2026-01-12T09:01:02 ERROR [app] getaddrinfo failed for 'order-db.svc.cluster.local': nameserver 10.96.0.10 timeout after 340ms
+2026-01-12T09:01:03 ERROR [app] getaddrinfo failed for 'order-db.svc.cluster.local': nameserver 10.96.0.10 timeout after 340ms
+2026-01-12T09:01:04 ERROR [app] getaddrinfo failed for 'order-db.svc.cluster.local': nameserver 10.96.0.10 timeout after 340ms
+2026-01-12T09:01:05 ERROR [app] getaddrinfo failed for 'order-db.svc.cluster.local': nameserver 10.96.0.10 timeout after 340ms
+2026-01-12T09:01:06 ERROR [app] getaddrinfo failed for 'order-db.svc.cluster.local': nameserver 10.96.0.10 timeout after 340ms
+2026-01-12T09:01:07 ERROR [app] getaddrinfo failed for 'order-db.svc.cluster.local': nameserver 10.96.0.10 timeout after 340ms
+2026-01-12T09:01:08 ERROR [app] getaddrinfo failed for 'order-db.svc.cluster.local': nameserver 10.96.0.10 timeout after 340ms
+2026-01-12T09:01:09 ERROR [app] getaddrinfo failed for 'order-db.svc.cluster.local': nameserver 10.96.0.10 timeout after 340ms
+2026-01-12T09:01:10 ERROR [app] getaddrinfo failed for 'order-db.svc.cluster.local': nameserver 10.96.0.10 timeout after 340ms
+2026-01-12T09:01:11 ERROR [app] getaddrinfo failed for 'order-db.svc.cluster.local': nameserver 10.96.0.10 timeout after 340ms
+2026-01-12T09:01:12 ERROR [app] getaddrinfo failed for 'order-db.svc.cluster.local': nameserver 10.96.0.10 timeout after 340ms
+2026-01-12T09:01:13 ERROR [app] getaddrinfo failed for 'order-db.svc.cluster.local': nameserver 10.96.0.10 timeout after 340ms
+2026-01-12T09:01:14 ERROR [app] getaddrinfo failed for 'order-db.svc.cluster.local': nameserver 10.96.0.10 timeout after 340ms
+2026-01-12T09:01:15 ERROR [app] getaddrinfo failed for 'order-db.svc.cluster.local': nameserver 10.96.0.10 timeout after 340ms
+2026-01-12T09:01:16 ERROR [app] getaddrinfo failed for 'order-db.svc.cluster.local': nameserver 10.96.0.10 timeout after 340ms
+2026-01-12T09:01:17 ERROR [app] getaddrinfo failed for 'order-db.svc.cluster.local': nameserver 10.96.0.10 timeout after 340ms
+2026-01-12T09:01:18 ERROR [app] getaddrinfo failed for 'order-db.svc.cluster.local': nameserver 10.96.0.10 timeout after 340ms
+2026-01-12T09:01:19 ERROR [app] getaddrinfo failed for 'order-db.svc.cluster.local': nameserver 10.96.0.10 timeout after 340ms
+2026-01-12T09:01:20 ERROR [app] getaddrinfo failed for 'order-db.svc.cluster.local': nameserver 10.96.0.10 timeout after 340ms
+2026-01-12T09:01:21 ERROR [app] getaddrinfo failed for 'order-db.svc.cluster.local': nameserver 10.96.0.10 timeout after 340ms
+2026-01-12T09:01:22 ERROR [app] getaddrinfo failed for 'order-db.svc.cluster.local': nameserver 10.96.0.10 timeout after 340ms
+2026-01-12T09:01:23 ERROR [app] getaddrinfo failed for 'order-db.svc.cluster.local': nameserver 10.96.0.10 timeout after 340ms
+2026-01-12T09:01:24 ERROR [app] getaddrinfo failed for 'order-db.svc.cluster.local': nameserver 10.96.0.10 timeout after 340ms
+2026-01-12T09:01:25 ERROR [app] getaddrinfo failed for 'order-db.svc.cluster.local': nameserver 10.96.0.10 timeout after 340ms
+2026-01-12T09:01:26 ERROR [app] getaddrinfo failed for 'order-db.svc.cluster.local': nameserver 10.96.0.10 timeout after 340ms
+2026-01-12T09:01:27 ERROR [app] getaddrinfo failed for 'order-db.svc.cluster.local': nameserver 10.96.0.10 timeout after 340ms
+2026-01-12T09:01:28 ERROR [app] getaddrinfo failed for 'order-db.svc.cluster.local': nameserver 10.96.0.10 timeout after 340ms
+2026-01-12T09:01:29 ERROR [app] getaddrinfo failed for 'order-db.svc.cluster.local': nameserver 10.96.0.10 timeout after 340ms
+2026-01-12T09:01:30 ERROR [app] getaddrinfo failed for 'order-db.svc.cluster.local': nameserver 10.96.0.10 timeout after 340ms
+2026-01-12T09:01:31 ERROR [app] getaddrinfo failed for 'order-db.svc.cluster.local': nameserver 10.96.0.10 timeout after 340ms
+2026-01-12T09:01:32 ERROR [app] getaddrinfo failed for 'order-db.svc.cluster.local': nameserver 10.96.0.10 timeout after 340ms
+2026-01-12T09:01:33 ERROR [app] getaddrinfo failed for 'order-db.svc.cluster.local': nameserver 10.96.0.10 timeout after 340ms
+2026-01-12T09:01:34 ERROR [app] getaddrinfo failed for 'order-db.svc.cluster.local': nameserver 10.96.0.10 timeout after 340ms
+2026-01-12T09:01:35 ERROR [app] getaddrinfo failed for 'order-db.svc.cluster.local': nameserver 10.96.0.10 timeout after 340ms
+2026-01-12T09:01:36 ERROR [app] getaddrinfo failed for 'order-db.svc.cluster.local': nameserver 10.96.0.10 timeout after 340ms
+2026-01-12T09:01:37 ERROR [app] getaddrinfo failed for 'order-db.svc.cluster.local': nameserver 10.96.0.10 timeout after 340ms
+2026-01-12T09:01:38 ERROR [app] getaddrinfo failed for 'order-db.svc.cluster.local': nameserver 10.96.0.10 timeout after 340ms
+2026-01-12T09:01:39 ERROR [app] getaddrinfo failed for 'order-db.svc.cluster.local': nameserver 10.96.0.10 timeout after 340ms
+2026-01-12T09:01:40 ERROR [app] getaddrinfo failed for 'order-db.svc.cluster.local': nameserver 10.96.0.10 timeout after 340ms
+2026-01-12T09:01:41 ERROR [app] getaddrinfo failed for 'order-db.svc.cluster.local': nameserver 10.96.0.10 timeout after 340ms
+2026-01-12T09:01:42 ERROR [app] getaddrinfo failed for 'order-db.svc.cluster.local': nameserver 10.96.0.10 timeout after 340ms
+2026-01-12T09:01:43 ERROR [app] getaddrinfo failed for 'order-db.svc.cluster.local': nameserver 10.96.0.10 timeout after 340ms
+2026-01-12T09:01:44 ERROR [app] getaddrinfo failed for 'order-db.svc.cluster.local': nameserver 10.96.0.10 timeout after 340ms
+2026-01-12T09:01:45 ERROR [app] getaddrinfo failed for 'order-db.svc.cluster.local': nameserver 10.96.0.10 timeout after 340ms
+2026-01-12T09:01:46 ERROR [app] getaddrinfo failed for 'order-db.svc.cluster.local': nameserver 10.96.0.10 timeout after 340ms
+2026-01-12T09:01:47 ERROR [app] getaddrinfo failed for 'order-db.svc.cluster.local': nameserver 10.96.0.10 timeout after 340ms
+2026-01-12T09:01:48 ERROR [app] getaddrinfo failed for 'order-db.svc.cluster.local': nameserver 10.96.0.10 timeout after 340ms
+2026-01-12T09:01:49 ERROR [app] getaddrinfo failed for 'order-db.svc.cluster.local': nameserver 10.96.0.10 timeout after 340ms
+2026-01-12T09:01:50 ERROR [app] getaddrinfo failed for 'order-db.svc.cluster.local': nameserver 10.96.0.10 timeout after 340ms
+2026-01-12T09:01:51 ERROR [app] getaddrinfo failed for 'order-db.svc.cluster.local': nameserver 10.96.0.10 timeout after 340ms
+2026-01-12T09:01:52 ERROR [app] getaddrinfo failed for 'order-db.svc.cluster.local': nameserver 10.96.0.10 timeout after 340ms
+2026-01-12T09:01:53 ERROR [app] getaddrinfo failed for 'order-db.svc.cluster.local': nameserver 10.96.0.10 timeout after 340ms
+2026-01-12T09:01:54 ERROR [app] getaddrinfo failed for 'order-db.svc.cluster.local': nameserver 10.96.0.10 timeout after 340ms
+2026-01-12T09:01:55 ERROR [app] getaddrinfo failed for 'order-db.svc.cluster.local': nameserver 10.96.0.10 timeout after 340ms
+2026-01-12T09:01:56 ERROR [app] getaddrinfo failed for 'order-db.svc.cluster.local': nameserver 10.96.0.10 timeout after 340ms
+2026-01-12T09:01:57 ERROR [app] getaddrinfo failed for 'order-db.svc.cluster.local': nameserver 10.96.0.10 timeout after 340ms
+2026-01-12T09:01:58 ERROR [app] getaddrinfo failed for 'order-db.svc.cluster.local': nameserver 10.96.0.10 timeout after 340ms
+2026-01-12T09:01:59 ERROR [app] getaddrinfo failed for 'order-db.svc.cluster.local': nameserver 10.96.0.10 timeout after 340ms
+2026-01-12T09:02:00 ERROR [app] getaddrinfo failed for 'order-db.svc.cluster.local': nameserver 10.96.0.10 timeout after 340ms
+2026-01-12T09:02:01 ERROR [app] getaddrinfo failed for 'order-db.svc.cluster.local': nameserver 10.96.0.10 timeout after 340ms
+2026-01-12T09:02:02 ERROR [app] getaddrinfo failed for 'order-db.svc.cluster.local': nameserver 10.96.0.10 timeout after 340ms
+2026-01-12T09:02:03 ERROR [app] getaddrinfo failed for 'order-db.svc.cluster.local': nameserver 10.96.0.10 timeout after 340ms
+2026-01-12T09:02:04 ERROR [app] getaddrinfo failed for 'order-db.svc.cluster.local': nameserver 10.96.0.10 timeout after 340ms
+2026-01-12T09:02:05 ERROR [app] getaddrinfo failed for 'order-db.svc.cluster.local': nameserver 10.96.0.10 timeout after 340ms
+2026-01-12T09:02:06 ERROR [app] getaddrinfo failed for 'order-db.svc.cluster.local': nameserver 10.96.0.10 timeout after 340ms
+2026-01-12T09:02:07 ERROR [app] getaddrinfo failed for 'order-db.svc.cluster.local': nameserver 10.96.0.10 timeout after 340ms
+2026-01-12T09:02:08 ERROR [app] getaddrinfo failed for 'order-db.svc.cluster.local': nameserver 10.96.0.10 timeout after 340ms
+2026-01-12T09:02:09 ERROR [app] getaddrinfo failed for 'order-db.svc.cluster.local': nameserver 10.96.0.10 timeout after 340ms
+2026-01-12T09:02:10 ERROR [app] getaddrinfo failed for 'order-db.svc.cluster.local': nameserver 10.96.0.10 timeout after 340ms
+2026-01-12T09:02:11 ERROR [app] getaddrinfo failed for 'order-db.svc.cluster.local': nameserver 10.96.0.10 timeout after 340ms
+2026-01-12T09:02:12 ERROR [app] getaddrinfo failed for 'order-db.svc.cluster.local': nameserver 10.96.0.10 timeout after 340ms
+2026-01-12T09:02:13 ERROR [app] getaddrinfo failed for 'order-db.svc.cluster.local': nameserver 10.96.0.10 timeout after 340ms
+2026-01-12T09:02:14 ERROR [app] getaddrinfo failed for 'order-db.svc.cluster.local': nameserver 10.96.0.10 timeout after 340ms
+2026-01-12T09:02:15 ERROR [app] getaddrinfo failed for 'order-db.svc.cluster.local': nameserver 10.96.0.10 timeout after 340ms
+2026-01-12T09:02:16 ERROR [app] getaddrinfo failed for 'order-db.svc.cluster.local': nameserver 10.96.0.10 timeout after 340ms
+2026-01-12T09:02:17 ERROR [app] getaddrinfo failed for 'order-db.svc.cluster.local': nameserver 10.96.0.10 timeout after 340ms
+2026-01-12T09:02:18 ERROR [app] getaddrinfo failed for 'order-db.svc.cluster.local': nameserver 10.96.0.10 timeout after 340ms
+2026-01-12T09:02:19 ERROR [app] getaddrinfo failed for 'order-db.svc.cluster.local': nameserver 10.96.0.10 timeout after 340ms
+2026-01-12T09:02:20 ERROR [app] getaddrinfo failed for 'order-db.svc.cluster.local': nameserver 10.96.0.10 timeout after 340ms
+2026-01-12T09:02:21 ERROR [app] getaddrinfo failed for 'order-db.svc.cluster.local': nameserver 10.96.0.10 timeout after 340ms
+2026-01-12T09:02:22 ERROR [app] getaddrinfo failed for 'order-db.svc.cluster.local': nameserver 10.96.0.10 timeout after 340ms
+2026-01-12T09:02:23 ERROR [app] getaddrinfo failed for 'order-db.svc.cluster.local': nameserver 10.96.0.10 timeout after 340ms
+2026-01-12T09:02:24 ERROR [app] getaddrinfo failed for 'order-db.svc.cluster.local': nameserver 10.96.0.10 timeout after 340ms
+2026-01-12T09:02:25 ERROR [app] getaddrinfo failed for 'order-db.svc.cluster.local': nameserver 10.96.0.10 timeout after 340ms
+2026-01-12T09:02:26 ERROR [app] getaddrinfo failed for 'order-db.svc.cluster.local': nameserver 10.96.0.10 timeout after 340ms
+2026-01-12T09:02:27 ERROR [app] getaddrinfo failed for 'order-db.svc.cluster.local': nameserver 10.96.0.10 timeout after 340ms
+2026-01-12T09:02:28 ERROR [app] getaddrinfo failed for 'order-db.svc.cluster.local': nameserver 10.96.0.10 timeout after 340ms
+2026-01-12T09:02:29 ERROR [app] getaddrinfo failed for 'order-db.svc.cluster.local': nameserver 10.96.0.10 timeout after 340ms
+2026-01-12T09:02:30 ERROR [app] getaddrinfo failed for 'order-db.svc.cluster.local': nameserver 10.96.0.10 timeout after 340ms
+2026-01-12T09:02:31 ERROR [app] getaddrinfo failed for 'order-db.svc.cluster.local': nameserver 10.96.0.10 timeout after 340ms
+2026-01-12T09:02:32 ERROR [app] getaddrinfo failed for 'order-db.svc.cluster.local': nameserver 10.96.0.10 timeout after 340ms
+2026-01-12T09:02:33 ERROR [app] getaddrinfo failed for 'order-db.svc.cluster.local': nameserver 10.96.0.10 timeout after 340ms
+2026-01-12T09:02:34 ERROR [app] getaddrinfo failed for 'order-db.svc.cluster.local': nameserver 10.96.0.10 timeout after 340ms
+2026-01-12T09:02:35 ERROR [app] getaddrinfo failed for 'order-db.svc.cluster.local': nameserver 10.96.0.10 timeout after 340ms
+2026-01-12T09:02:36 ERROR [app] getaddrinfo failed for 'order-db.svc.cluster.local': nameserver 10.96.0.10 timeout after 340ms
+2026-01-12T09:02:37 ERROR [app] getaddrinfo failed for 'order-db.svc.cluster.local': nameserver 10.96.0.10 timeout after 340ms
+2026-01-12T09:02:38 ERROR [app] getaddrinfo failed for 'order-db.svc.cluster.local': nameserver 10.96.0.10 timeout after 340ms
+2026-01-12T09:02:39 ERROR [app] getaddrinfo failed for 'order-db.svc.cluster.local': nameserver 10.96.0.10 timeout after 340ms
+2026-01-12T09:02:40 ERROR [app] getaddrinfo failed for 'order-db.svc.cluster.local': nameserver 10.96.0.10 timeout after 340ms
+2026-01-12T09:02:41 ERROR [app] getaddrinfo failed for 'order-db.svc.cluster.local': nameserver 10.96.0.10 timeout after 340ms
+2026-01-12T09:02:42 ERROR [app] getaddrinfo failed for 'order-db.svc.cluster.local': nameserver 10.96.0.10 timeout after 340ms
+2026-01-12T09:02:43 ERROR [app] getaddrinfo failed for 'order-db.svc.cluster.local': nameserver 10.96.0.10 timeout after 340ms
+2026-01-12T09:02:44 ERROR [app] getaddrinfo failed for 'order-db.svc.cluster.local': nameserver 10.96.0.10 timeout after 340ms
+2026-01-12T09:02:45 ERROR [app] getaddrinfo failed for 'order-db.svc.cluster.local': nameserver 10.96.0.10 timeout after 340ms
+2026-01-12T09:02:46 ERROR [app] getaddrinfo failed for 'order-db.svc.cluster.local': nameserver 10.96.0.10 timeout after 340ms
+2026-01-12T09:02:47 ERROR [app] getaddrinfo failed for 'order-db.svc.cluster.local': nameserver 10.96.0.10 timeout after 340ms
+2026-01-12T09:02:48 ERROR [app] getaddrinfo failed for 'order-db.svc.cluster.local': nameserver 10.96.0.10 timeout after 340ms
+2026-01-12T09:02:49 ERROR [app] getaddrinfo failed for 'order-db.svc.cluster.local': nameserver 10.96.0.10 timeout after 340ms
+2026-01-12T09:02:53 INFO  [app] order/list handled in 12ms cache=hit status=200
+2026-01-12T09:02:54 INFO  [app] order/list handled in 12ms cache=hit status=200
+2026-01-12T09:03:00 INFO  [app] order/list handled in 12ms cache=hit status=200
+2026-01-12T09:03:06 INFO  [app] order/list handled in 12ms cache=hit status=200
+2026-01-12T09:03:09 INFO  [app] order/list handled in 12ms cache=hit status=200
+2026-01-12T09:03:14 INFO  [app] order/list handled in 12ms cache=hit status=200
+2026-01-12T09:03:15 INFO  [app] order/list handled in 12ms cache=miss status=200
+2026-01-12T09:03:19 INFO  [app] order/list handled in 12ms cache=hit status=200
+2026-01-12T09:03:22 INFO  [app] order/list handled in 12ms cache=hit status=200
+2026-01-12T09:03:24 INFO  [app] order/list handled in 12ms cache=hit status=200
+2026-01-12T09:03:27 INFO  [app] order/list handled in 12ms cache=hit status=200
+2026-01-12T09:03:44 INFO  [app] order/list handled in 12ms cache=hit status=200
+2026-01-12T09:03:46 INFO  [app] order/list handled in 12ms cache=hit status=200
+2026-01-12T09:03:48 INFO  [app] order/list handled in 12ms cache=hit status=200
+2026-01-12T09:03:55 INFO  [app] order/list handled in 12ms cache=hit status=200
+2026-01-12T09:03:56 INFO  [app] order/list handled in 12ms cache=hit status=200
+2026-01-12T09:03:57 INFO  [app] order/list handled in 12ms cache=miss status=200
+2026-01-12T09:03:58 INFO  [app] order/list handled in 12ms cache=hit status=200
+2026-01-12T09:04:00 INFO  [app] order/list handled in 12ms cache=hit status=200
+2026-01-12T09:04:02 INFO  [app] order/list handled in 12ms cache=hit status=200
+2026-01-12T09:04:03 INFO  [app] order/list handled in 12ms cache=hit status=200
+2026-01-12T09:04:11 INFO  [app] order/list handled in 12ms cache=miss status=200
+2026-01-12T09:04:12 INFO  [app] order/list handled in 12ms cache=miss status=200
+2026-01-12T09:04:13 INFO  [app] order/list handled in 12ms cache=hit status=200

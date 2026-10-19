@@ -1,0 +1,75 @@
+# Alertmanager configuration for the drill stack.
+#
+# Highlights required by the lab brief:
+#   * group_by        -> one grouped notification per <scenario/service>
+#   * severity routes -> critical pages immediately, warning is batched
+#   * inhibition_rules -> suppress alert storms (a critical inhibits the noisy
+#                         symptom-level warnings that it causes)
+global:
+  resolve_timeout: 5m
+
+route:
+  # Group by alert identity + affected service so a single incident does not
+  # fan out into hundreds of notifications.
+  group_by: ["alertname", "service", "scenario"]
+  # Wait before sending the first notification for a new group.
+  group_wait: 30s
+  # Wait before sending new alerts added to an existing group (de-bounce).
+  group_interval: 5m
+  # Re-notify while the group is still firing.
+  repeat_interval: 4h
+  receiver: default-webhook
+  routes:
+    - matchers:
+        - severity = "critical"
+      receiver: pager-webhook
+      group_wait: 10s
+      repeat_interval: 1h
+      continue: true
+    - matchers:
+        - severity = "warning"
+      receiver: chat-webhook
+      group_wait: 1m
+      repeat_interval: 6h
+
+receivers:
+  - name: default-webhook
+    webhook_configs:
+      - url: "http://alert-sink:9099/default"
+        send_resolved: true
+  - name: pager-webhook
+    webhook_configs:
+      - url: "http://alert-sink:9099/critical"
+        send_resolved: true
+  - name: chat-webhook
+    webhook_configs:
+      - url: "http://alert-sink:9099/warning"
+        send_resolved: true
+
+# --------------------------------------------------------------------------
+# Inhibition rules — suppress alert storms.
+# --------------------------------------------------------------------------
+inhibit_rules:
+  # 1) A critical alert for a service suppresses the warning-level symptoms of
+  #    the SAME service (they are almost always caused by the critical root).
+  - source_matchers:
+      - severity = "critical"
+    target_matchers:
+      - severity = "warning"
+    equal: ["service"]
+
+  # 2) A confirmed gateway/SLB outage is the root cause; suppress downstream
+  #    app-level warning noise keyed on the same scenario.
+  - source_matchers:
+      - alertname = "GatewayUpstream5xxSurge"
+    target_matchers:
+      - severity = "warning"
+    equal: ["scenario"]
+
+  # 3) A DB CPU saturation suppresses slow-query warnings for the same service
+  #    (both are the same slow-SQL incident, avoid double paging).
+  - source_matchers:
+      - alertname = "DbCpuSaturation"
+    target_matchers:
+      - alertname = "DbSlowQuerySurge"
+    equal: ["service"]

@@ -1,0 +1,179 @@
+2026-01-12T09:00:04 INFO  [app] order/list handled in 12ms cache=hit status=200
+2026-01-12T09:00:05 INFO  [app] order/list handled in 12ms cache=hit status=200
+2026-01-12T09:00:07 INFO  [app] order/list handled in 12ms cache=hit status=200
+2026-01-12T09:00:11 INFO  [app] order/list handled in 12ms cache=hit status=200
+2026-01-12T09:00:12 INFO  [app] order/list handled in 12ms cache=hit status=200
+2026-01-12T09:00:13 INFO  [app] order/list handled in 12ms cache=hit status=200
+2026-01-12T09:00:21 INFO  [app] order/list handled in 12ms cache=hit status=200
+2026-01-12T09:00:24 INFO  [app] order/list handled in 12ms cache=hit status=200
+2026-01-12T09:00:26 INFO  [app] order/list handled in 12ms cache=hit status=200
+2026-01-12T09:00:27 INFO  [app] order/list handled in 12ms cache=hit status=200
+2026-01-12T09:00:35 INFO  [app] order/list handled in 12ms cache=hit status=200
+2026-01-12T09:00:38 INFO  [app] order/list handled in 12ms cache=hit status=200
+2026-01-12T09:00:42 WARN  [app] worker pool saturated: busy=15/16 queue=3 cpu=89% -> request timeout after 600ms
+2026-01-12T09:00:43 WARN  [app] worker pool saturated: busy=17/16 queue=11 cpu=93% -> request timeout after 600ms
+2026-01-12T09:00:44 WARN  [app] worker pool saturated: busy=17/16 queue=20 cpu=96% -> request timeout after 600ms
+2026-01-12T09:00:45 WARN  [app] worker pool saturated: busy=17/16 queue=14 cpu=97% -> request timeout after 600ms
+2026-01-12T09:00:46 WARN  [app] worker pool saturated: busy=16/16 queue=9 cpu=97% -> request timeout after 600ms
+2026-01-12T09:00:47 WARN  [app] worker pool saturated: busy=17/16 queue=18 cpu=98% -> request timeout after 600ms
+2026-01-12T09:00:48 WARN  [app] worker pool saturated: busy=17/16 queue=22 cpu=98% -> request timeout after 600ms
+2026-01-12T09:00:49 WARN  [app] worker pool saturated: busy=17/16 queue=22 cpu=98% -> request timeout after 600ms
+2026-01-12T09:00:50 WARN  [app] worker pool saturated: busy=17/16 queue=18 cpu=98% -> request timeout after 600ms
+2026-01-12T09:00:51 WARN  [app] worker pool saturated: busy=17/16 queue=20 cpu=98% -> request timeout after 600ms
+2026-01-12T09:00:52 ERROR [app] HikariPool-1 - Connection is not available, request timed out after 400ms (total=10, active=10, idle=0, waiting=1)
+2026-01-12T09:00:52 WARN  [app] worker pool saturated: busy=17/16 queue=18 cpu=98% -> request timeout after 600ms
+2026-01-12T09:00:53 WARN  [app] worker pool saturated: busy=17/16 queue=18 cpu=98% -> request timeout after 600ms
+2026-01-12T09:00:54 WARN  [app] worker pool saturated: busy=17/16 queue=15 cpu=98% -> request timeout after 600ms
+2026-01-12T09:00:55 WARN  [app] worker pool saturated: busy=17/16 queue=17 cpu=98% -> request timeout after 600ms
+2026-01-12T09:00:56 WARN  [app] worker pool saturated: busy=17/16 queue=12 cpu=98% -> request timeout after 600ms
+2026-01-12T09:00:57 WARN  [app] worker pool saturated: busy=17/16 queue=18 cpu=98% -> request timeout after 600ms
+2026-01-12T09:00:58 ERROR [app] HikariPool-1 - Connection is not available, request timed out after 400ms (total=10, active=10, idle=0, waiting=1)
+2026-01-12T09:00:58 WARN  [app] worker pool saturated: busy=17/16 queue=38 cpu=98% -> request timeout after 600ms
+2026-01-12T09:00:59 WARN  [app] worker pool saturated: busy=17/16 queue=22 cpu=98% -> request timeout after 600ms
+2026-01-12T09:01:00 WARN  [app] worker pool saturated: busy=17/16 queue=15 cpu=98% -> request timeout after 600ms
+2026-01-12T09:01:01 WARN  [app] worker pool saturated: busy=17/16 queue=20 cpu=98% -> request timeout after 600ms
+2026-01-12T09:01:02 WARN  [app] worker pool saturated: busy=14/16 queue=11 cpu=98% -> request timeout after 600ms
+2026-01-12T09:01:03 WARN  [app] worker pool saturated: busy=17/16 queue=17 cpu=98% -> request timeout after 600ms
+2026-01-12T09:01:04 WARN  [app] worker pool saturated: busy=17/16 queue=16 cpu=98% -> request timeout after 600ms
+2026-01-12T09:01:05 WARN  [app] worker pool saturated: busy=17/16 queue=22 cpu=98% -> request timeout after 600ms
+2026-01-12T09:01:06 WARN  [app] worker pool saturated: busy=17/16 queue=24 cpu=98% -> request timeout after 600ms
+2026-01-12T09:01:07 ERROR [app] HikariPool-1 - Connection is not available, request timed out after 400ms (total=10, active=10, idle=0, waiting=1)
+2026-01-12T09:01:07 WARN  [app] worker pool saturated: busy=17/16 queue=19 cpu=98% -> request timeout after 600ms
+2026-01-12T09:01:08 WARN  [app] worker pool saturated: busy=17/16 queue=15 cpu=98% -> request timeout after 600ms
+2026-01-12T09:01:09 WARN  [app] worker pool saturated: busy=17/16 queue=16 cpu=98% -> request timeout after 600ms
+2026-01-12T09:01:10 WARN  [app] worker pool saturated: busy=17/16 queue=23 cpu=98% -> request timeout after 600ms
+2026-01-12T09:01:11 WARN  [app] worker pool saturated: busy=17/16 queue=18 cpu=98% -> request timeout after 600ms
+2026-01-12T09:01:12 WARN  [app] worker pool saturated: busy=17/16 queue=12 cpu=98% -> request timeout after 600ms
+2026-01-12T09:01:13 ERROR [app] HikariPool-1 - Connection is not available, request timed out after 400ms (total=10, active=10, idle=0, waiting=2)
+2026-01-12T09:01:13 WARN  [app] worker pool saturated: busy=17/16 queue=16 cpu=98% -> request timeout after 600ms
+2026-01-12T09:01:14 WARN  [app] worker pool saturated: busy=15/16 queue=12 cpu=98% -> request timeout after 600ms
+2026-01-12T09:01:15 WARN  [app] worker pool saturated: busy=17/16 queue=15 cpu=98% -> request timeout after 600ms
+2026-01-12T09:01:16 WARN  [app] worker pool saturated: busy=17/16 queue=14 cpu=98% -> request timeout after 600ms
+2026-01-12T09:01:17 WARN  [app] worker pool saturated: busy=17/16 queue=18 cpu=98% -> request timeout after 600ms
+2026-01-12T09:01:18 WARN  [app] worker pool saturated: busy=17/16 queue=9 cpu=98% -> request timeout after 600ms
+2026-01-12T09:01:19 WARN  [app] worker pool saturated: busy=17/16 queue=15 cpu=98% -> request timeout after 600ms
+2026-01-12T09:01:20 WARN  [app] worker pool saturated: busy=17/16 queue=13 cpu=98% -> request timeout after 600ms
+2026-01-12T09:01:21 WARN  [app] worker pool saturated: busy=17/16 queue=22 cpu=98% -> request timeout after 600ms
+2026-01-12T09:01:22 WARN  [app] worker pool saturated: busy=17/16 queue=18 cpu=98% -> request timeout after 600ms
+2026-01-12T09:01:23 WARN  [app] worker pool saturated: busy=17/16 queue=20 cpu=98% -> request timeout after 600ms
+2026-01-12T09:01:24 WARN  [app] worker pool saturated: busy=17/16 queue=19 cpu=98% -> request timeout after 600ms
+2026-01-12T09:01:25 WARN  [app] worker pool saturated: busy=17/16 queue=19 cpu=98% -> request timeout after 600ms
+2026-01-12T09:01:26 WARN  [app] worker pool saturated: busy=17/16 queue=15 cpu=98% -> request timeout after 600ms
+2026-01-12T09:01:27 WARN  [app] worker pool saturated: busy=15/16 queue=9 cpu=98% -> request timeout after 600ms
+2026-01-12T09:01:28 WARN  [app] worker pool saturated: busy=17/16 queue=20 cpu=98% -> request timeout after 600ms
+2026-01-12T09:01:29 WARN  [app] worker pool saturated: busy=17/16 queue=12 cpu=98% -> request timeout after 600ms
+2026-01-12T09:01:30 WARN  [app] worker pool saturated: busy=15/16 queue=10 cpu=98% -> request timeout after 600ms
+2026-01-12T09:01:31 WARN  [app] worker pool saturated: busy=10/16 queue=4 cpu=98% -> request timeout after 600ms
+2026-01-12T09:01:32 WARN  [app] worker pool saturated: busy=16/16 queue=14 cpu=98% -> request timeout after 600ms
+2026-01-12T09:01:33 WARN  [app] worker pool saturated: busy=15/16 queue=8 cpu=98% -> request timeout after 600ms
+2026-01-12T09:01:34 WARN  [app] worker pool saturated: busy=17/16 queue=14 cpu=98% -> request timeout after 600ms
+2026-01-12T09:01:35 WARN  [app] worker pool saturated: busy=14/16 queue=9 cpu=98% -> request timeout after 600ms
+2026-01-12T09:01:36 WARN  [app] worker pool saturated: busy=17/16 queue=9 cpu=98% -> request timeout after 600ms
+2026-01-12T09:01:37 WARN  [app] worker pool saturated: busy=17/16 queue=17 cpu=98% -> request timeout after 600ms
+2026-01-12T09:01:38 WARN  [app] worker pool saturated: busy=17/16 queue=18 cpu=98% -> request timeout after 600ms
+2026-01-12T09:01:39 WARN  [app] worker pool saturated: busy=17/16 queue=13 cpu=98% -> request timeout after 600ms
+2026-01-12T09:01:40 WARN  [app] worker pool saturated: busy=17/16 queue=12 cpu=98% -> request timeout after 600ms
+2026-01-12T09:01:41 WARN  [app] worker pool saturated: busy=17/16 queue=22 cpu=98% -> request timeout after 600ms
+2026-01-12T09:01:42 WARN  [app] worker pool saturated: busy=17/16 queue=12 cpu=98% -> request timeout after 600ms
+2026-01-12T09:01:43 WARN  [app] worker pool saturated: busy=17/16 queue=18 cpu=98% -> request timeout after 600ms
+2026-01-12T09:01:44 WARN  [app] worker pool saturated: busy=17/16 queue=18 cpu=98% -> request timeout after 600ms
+2026-01-12T09:01:45 WARN  [app] worker pool saturated: busy=17/16 queue=20 cpu=98% -> request timeout after 600ms
+2026-01-12T09:01:46 WARN  [app] worker pool saturated: busy=17/16 queue=21 cpu=98% -> request timeout after 600ms
+2026-01-12T09:01:47 WARN  [app] worker pool saturated: busy=17/16 queue=13 cpu=98% -> request timeout after 600ms
+2026-01-12T09:01:48 WARN  [app] worker pool saturated: busy=17/16 queue=24 cpu=98% -> request timeout after 600ms
+2026-01-12T09:01:49 WARN  [app] worker pool saturated: busy=17/16 queue=18 cpu=98% -> request timeout after 600ms
+2026-01-12T09:01:50 WARN  [app] worker pool saturated: busy=17/16 queue=20 cpu=98% -> request timeout after 600ms
+2026-01-12T09:01:51 WARN  [app] worker pool saturated: busy=15/16 queue=10 cpu=98% -> request timeout after 600ms
+2026-01-12T09:01:52 WARN  [app] worker pool saturated: busy=17/16 queue=11 cpu=98% -> request timeout after 600ms
+2026-01-12T09:01:53 WARN  [app] worker pool saturated: busy=17/16 queue=19 cpu=98% -> request timeout after 600ms
+2026-01-12T09:01:54 WARN  [app] worker pool saturated: busy=17/16 queue=25 cpu=98% -> request timeout after 600ms
+2026-01-12T09:01:55 WARN  [app] worker pool saturated: busy=14/16 queue=8 cpu=98% -> request timeout after 600ms
+2026-01-12T09:01:56 ERROR [app] HikariPool-1 - Connection is not available, request timed out after 400ms (total=10, active=10, idle=0, waiting=1)
+2026-01-12T09:01:56 WARN  [app] worker pool saturated: busy=17/16 queue=25 cpu=98% -> request timeout after 600ms
+2026-01-12T09:01:57 WARN  [app] worker pool saturated: busy=17/16 queue=13 cpu=98% -> request timeout after 600ms
+2026-01-12T09:01:58 WARN  [app] worker pool saturated: busy=17/16 queue=11 cpu=98% -> request timeout after 600ms
+2026-01-12T09:01:59 WARN  [app] worker pool saturated: busy=15/16 queue=13 cpu=98% -> request timeout after 600ms
+2026-01-12T09:02:00 WARN  [app] worker pool saturated: busy=17/16 queue=11 cpu=98% -> request timeout after 600ms
+2026-01-12T09:02:01 WARN  [app] worker pool saturated: busy=17/16 queue=17 cpu=98% -> request timeout after 600ms
+2026-01-12T09:02:02 WARN  [app] worker pool saturated: busy=17/16 queue=18 cpu=98% -> request timeout after 600ms
+2026-01-12T09:02:03 WARN  [app] worker pool saturated: busy=17/16 queue=22 cpu=98% -> request timeout after 600ms
+2026-01-12T09:02:04 WARN  [app] worker pool saturated: busy=16/16 queue=12 cpu=98% -> request timeout after 600ms
+2026-01-12T09:02:05 WARN  [app] worker pool saturated: busy=17/16 queue=19 cpu=98% -> request timeout after 600ms
+2026-01-12T09:02:06 ERROR [app] HikariPool-1 - Connection is not available, request timed out after 400ms (total=10, active=10, idle=0, waiting=1)
+2026-01-12T09:02:06 WARN  [app] worker pool saturated: busy=17/16 queue=19 cpu=98% -> request timeout after 600ms
+2026-01-12T09:02:07 WARN  [app] worker pool saturated: busy=17/16 queue=18 cpu=98% -> request timeout after 600ms
+2026-01-12T09:02:08 WARN  [app] worker pool saturated: busy=15/16 queue=7 cpu=98% -> request timeout after 600ms
+2026-01-12T09:02:09 WARN  [app] worker pool saturated: busy=17/16 queue=14 cpu=98% -> request timeout after 600ms
+2026-01-12T09:02:10 WARN  [app] worker pool saturated: busy=17/16 queue=12 cpu=98% -> request timeout after 600ms
+2026-01-12T09:02:11 WARN  [app] worker pool saturated: busy=17/16 queue=12 cpu=98% -> request timeout after 600ms
+2026-01-12T09:02:12 WARN  [app] worker pool saturated: busy=17/16 queue=16 cpu=98% -> request timeout after 600ms
+2026-01-12T09:02:13 WARN  [app] worker pool saturated: busy=17/16 queue=21 cpu=98% -> request timeout after 600ms
+2026-01-12T09:02:14 WARN  [app] worker pool saturated: busy=17/16 queue=17 cpu=98% -> request timeout after 600ms
+2026-01-12T09:02:15 WARN  [app] worker pool saturated: busy=17/16 queue=22 cpu=98% -> request timeout after 600ms
+2026-01-12T09:02:16 ERROR [app] HikariPool-1 - Connection is not available, request timed out after 400ms (total=10, active=10, idle=0, waiting=1)
+2026-01-12T09:02:16 WARN  [app] worker pool saturated: busy=17/16 queue=21 cpu=98% -> request timeout after 600ms
+2026-01-12T09:02:17 WARN  [app] worker pool saturated: busy=17/16 queue=15 cpu=98% -> request timeout after 600ms
+2026-01-12T09:02:18 WARN  [app] worker pool saturated: busy=17/16 queue=22 cpu=98% -> request timeout after 600ms
+2026-01-12T09:02:19 WARN  [app] worker pool saturated: busy=17/16 queue=17 cpu=98% -> request timeout after 600ms
+2026-01-12T09:02:20 WARN  [app] worker pool saturated: busy=15/16 queue=11 cpu=98% -> request timeout after 600ms
+2026-01-12T09:02:21 WARN  [app] worker pool saturated: busy=16/16 queue=14 cpu=98% -> request timeout after 600ms
+2026-01-12T09:02:22 WARN  [app] worker pool saturated: busy=17/16 queue=13 cpu=98% -> request timeout after 600ms
+2026-01-12T09:02:23 WARN  [app] worker pool saturated: busy=17/16 queue=20 cpu=98% -> request timeout after 600ms
+2026-01-12T09:02:24 WARN  [app] worker pool saturated: busy=16/16 queue=11 cpu=98% -> request timeout after 600ms
+2026-01-12T09:02:25 WARN  [app] worker pool saturated: busy=17/16 queue=20 cpu=98% -> request timeout after 600ms
+2026-01-12T09:02:26 WARN  [app] worker pool saturated: busy=14/16 queue=8 cpu=98% -> request timeout after 600ms
+2026-01-12T09:02:27 WARN  [app] worker pool saturated: busy=17/16 queue=22 cpu=98% -> request timeout after 600ms
+2026-01-12T09:02:28 WARN  [app] worker pool saturated: busy=17/16 queue=14 cpu=98% -> request timeout after 600ms
+2026-01-12T09:02:29 WARN  [app] worker pool saturated: busy=17/16 queue=16 cpu=98% -> request timeout after 600ms
+2026-01-12T09:02:30 WARN  [app] worker pool saturated: busy=17/16 queue=19 cpu=98% -> request timeout after 600ms
+2026-01-12T09:02:31 WARN  [app] worker pool saturated: busy=17/16 queue=14 cpu=98% -> request timeout after 600ms
+2026-01-12T09:02:32 WARN  [app] worker pool saturated: busy=17/16 queue=10 cpu=98% -> request timeout after 600ms
+2026-01-12T09:02:33 WARN  [app] worker pool saturated: busy=17/16 queue=14 cpu=98% -> request timeout after 600ms
+2026-01-12T09:02:34 WARN  [app] worker pool saturated: busy=17/16 queue=21 cpu=98% -> request timeout after 600ms
+2026-01-12T09:02:35 WARN  [app] worker pool saturated: busy=17/16 queue=11 cpu=98% -> request timeout after 600ms
+2026-01-12T09:02:36 WARN  [app] worker pool saturated: busy=17/16 queue=22 cpu=98% -> request timeout after 600ms
+2026-01-12T09:02:37 WARN  [app] worker pool saturated: busy=17/16 queue=12 cpu=98% -> request timeout after 600ms
+2026-01-12T09:02:38 WARN  [app] worker pool saturated: busy=17/16 queue=19 cpu=98% -> request timeout after 600ms
+2026-01-12T09:02:39 WARN  [app] worker pool saturated: busy=17/16 queue=15 cpu=98% -> request timeout after 600ms
+2026-01-12T09:02:40 WARN  [app] worker pool saturated: busy=16/16 queue=11 cpu=98% -> request timeout after 600ms
+2026-01-12T09:02:41 WARN  [app] worker pool saturated: busy=17/16 queue=14 cpu=98% -> request timeout after 600ms
+2026-01-12T09:02:42 WARN  [app] worker pool saturated: busy=17/16 queue=16 cpu=98% -> request timeout after 600ms
+2026-01-12T09:02:43 WARN  [app] worker pool saturated: busy=17/16 queue=10 cpu=98% -> request timeout after 600ms
+2026-01-12T09:02:44 WARN  [app] worker pool saturated: busy=16/16 queue=8 cpu=98% -> request timeout after 600ms
+2026-01-12T09:02:45 WARN  [app] worker pool saturated: busy=15/16 queue=10 cpu=98% -> request timeout after 600ms
+2026-01-12T09:02:46 WARN  [app] worker pool saturated: busy=17/16 queue=23 cpu=98% -> request timeout after 600ms
+2026-01-12T09:02:47 ERROR [app] HikariPool-1 - Connection is not available, request timed out after 400ms (total=10, active=10, idle=0, waiting=2)
+2026-01-12T09:02:47 WARN  [app] worker pool saturated: busy=17/16 queue=37 cpu=98% -> request timeout after 600ms
+2026-01-12T09:02:48 WARN  [app] worker pool saturated: busy=17/16 queue=11 cpu=98% -> request timeout after 600ms
+2026-01-12T09:02:49 WARN  [app] worker pool saturated: busy=17/16 queue=14 cpu=98% -> request timeout after 600ms
+2026-01-12T09:02:54 INFO  [app] order/list handled in 12ms cache=hit status=200
+2026-01-12T09:03:01 INFO  [app] order/list handled in 12ms cache=miss status=200
+2026-01-12T09:03:09 INFO  [app] order/list handled in 12ms cache=miss status=200
+2026-01-12T09:03:10 INFO  [app] order/list handled in 12ms cache=hit status=200
+2026-01-12T09:03:11 INFO  [app] order/list handled in 12ms cache=hit status=200
+2026-01-12T09:03:12 INFO  [app] order/list handled in 12ms cache=hit status=200
+2026-01-12T09:03:13 INFO  [app] order/list handled in 12ms cache=hit status=200
+2026-01-12T09:03:18 INFO  [app] order/list handled in 12ms cache=hit status=200
+2026-01-12T09:03:19 INFO  [app] order/list handled in 12ms cache=hit status=200
+2026-01-12T09:03:20 INFO  [app] order/list handled in 12ms cache=hit status=200
+2026-01-12T09:03:22 INFO  [app] order/list handled in 12ms cache=hit status=200
+2026-01-12T09:03:23 INFO  [app] order/list handled in 12ms cache=hit status=200
+2026-01-12T09:03:28 INFO  [app] order/list handled in 12ms cache=hit status=200
+2026-01-12T09:03:32 INFO  [app] order/list handled in 12ms cache=hit status=200
+2026-01-12T09:03:34 INFO  [app] order/list handled in 12ms cache=hit status=200
+2026-01-12T09:03:35 INFO  [app] order/list handled in 12ms cache=hit status=200
+2026-01-12T09:03:38 INFO  [app] order/list handled in 12ms cache=hit status=200
+2026-01-12T09:03:41 INFO  [app] order/list handled in 12ms cache=hit status=200
+2026-01-12T09:03:42 INFO  [app] order/list handled in 12ms cache=hit status=200
+2026-01-12T09:03:46 INFO  [app] order/list handled in 12ms cache=miss status=200
+2026-01-12T09:03:48 INFO  [app] order/list handled in 12ms cache=hit status=200
+2026-01-12T09:03:49 INFO  [app] order/list handled in 12ms cache=hit status=200
+2026-01-12T09:03:52 INFO  [app] order/list handled in 12ms cache=hit status=200
+2026-01-12T09:03:54 INFO  [app] order/list handled in 12ms cache=hit status=200
+2026-01-12T09:03:57 INFO  [app] order/list handled in 12ms cache=hit status=200
+2026-01-12T09:04:01 INFO  [app] order/list handled in 12ms cache=hit status=200
+2026-01-12T09:04:07 INFO  [app] order/list handled in 12ms cache=hit status=200
+2026-01-12T09:04:11 INFO  [app] order/list handled in 12ms cache=hit status=200
+2026-01-12T09:04:12 INFO  [app] order/list handled in 12ms cache=hit status=200
+2026-01-12T09:04:13 INFO  [app] order/list handled in 12ms cache=miss status=200
+2026-01-12T09:04:17 INFO  [app] order/list handled in 12ms cache=hit status=200

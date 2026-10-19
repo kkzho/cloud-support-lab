@@ -1,0 +1,62 @@
+# Prometheus scrape configuration for the cloud-support-lab drill stack.
+#
+# In the sandbox (no docker) this file is illustrative: the accelerated runner
+# already produces the same metric names in evidence/<id>/metrics.csv.
+# In the local Docker mode (lab/docker-compose.yml) these targets are live.
+global:
+  scrape_interval: 15s
+  evaluation_interval: 15s
+  external_labels:
+    lab: cloud-support-lab
+    env: drill
+
+rule_files:
+  - rules.yml
+
+alerting:
+  alertmanagers:
+    - static_configs:
+        - targets: ["alertmanager:9093"]
+
+scrape_configs:
+  # App (3-tier business app, exposes /metrics)
+  - job_name: order-api
+    metrics_path: /metrics
+    static_configs:
+      - targets: ["app:8080"]
+        labels:
+          tier: app
+          service: order-api
+
+  # Gateway / SLB access layer (nginx instrumented by nginx-prometheus-exporter)
+  - job_name: gateway
+    metrics_path: /metrics
+    static_configs:
+      - targets: ["nginx-exporter:9113"]
+        labels:
+          tier: gateway
+          service: order-gateway
+
+  # Downstream database exporter (mysqld_exporter)
+  - job_name: order-db
+    static_configs:
+      - targets: ["mysql:9104"]
+        labels:
+          tier: db
+          service: order-db
+
+  # Redis exporter
+  - job_name: order-cache
+    static_configs:
+      - targets: ["redis:9121"]
+        labels:
+          tier: cache
+          service: order-cache
+
+  # Node exporter (CPU / memory / disk / inode)
+  - job_name: node
+    static_configs:
+      - targets: ["node-exporter:9100"]
+        labels:
+          tier: node
+          service: order-node

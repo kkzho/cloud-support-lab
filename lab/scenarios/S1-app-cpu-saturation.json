@@ -1,0 +1,76 @@
+{
+  "id": "S1-app-cpu-saturation",
+  "name": "应用实例 CPU 打满",
+  "short": "app-cpu",
+  "service": "app",
+  "description": "业务实例 CPU 被占满（死循环/批量任务），单实例处理能力下降，接口延迟升高并出现部分请求超时。",
+  "total_ticks": 260,
+  "pre_ticks": 40,
+  "fault_ticks": 130,
+  "tick_sleep_s": 0.03,
+  "fault_params": {
+    "node_cpu_target": 98.0,
+    "cpu_service_mult": 3.4
+  },
+  "expected_signals": [
+    "node_cpu_percent 逼近 100",
+    "http_request_duration_ms_p95/p99 显著升高",
+    "app_worker_busy 达到 worker 池上限",
+    "http_requests_total{status=\"5xx\"} 出现少量超时"
+  ],
+  "root_cause_hints": [
+    "确认是否单实例 CPU 打满（top / cAdvisor node_cpu_percent 接近 100）",
+    "结合 app 日志中的 worker pool saturated / request timeout",
+    "排查是否有死循环、定时批量任务或流量突增导致单实例过载"
+  ],
+  "baseline_params": {
+    "rps": 120.0,
+    "app_workers": 16,
+    "timeout_ms": 600.0,
+    "conn_pool_size": 10,
+    "leaked_conns": 0,
+    "conn_timeout_ms": 400.0,
+    "node_cpu_target": 25.0,
+    "cpu_service_mult": 3.2,
+    "node_mem_target": 42.0,
+    "mem_leak_rate": 0.0,
+    "oom_enabled": false,
+    "mem_cap": 100.0,
+    "node_disk_target": 55.0,
+    "disk_fill_rate": 0.0,
+    "node_inode_target": 30.0,
+    "inode_fill_rate": 0.0,
+    "fs_cap": 100.0,
+    "db_base_ms": 150.0,
+    "db_cpu_target": 22.0,
+    "db_slow_query_rate": 0.0,
+    "db_slow_query_ms": 0.0,
+    "db_max_conns": 100,
+    "healthcheck_fail": false,
+    "lb_drop_ratio": 0.0,
+    "dns_fail_rate": 0.0,
+    "dns_timeout_ms": 340.0,
+    "cache_base_ms": 3.0,
+    "cache_hit_ratio": 0.85,
+    "cache_hotkey": false,
+    "cache_hotkey_ms": 220.0,
+    "cache_hotkey_prob": 0.6,
+    "cache_timeout_rate": 0.0,
+    "cache_timeout_ms": 520.0,
+    "request_base_ms": 6.0
+  },
+  "phase_boundaries": {
+    "pre": [
+      0,
+      40
+    ],
+    "fault": [
+      40,
+      170
+    ],
+    "post": [
+      170,
+      260
+    ]
+  }
+}

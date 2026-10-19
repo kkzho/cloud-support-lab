@@ -1,0 +1,76 @@
+{
+  "id": "S4-memory-leak-oomkill",
+  "name": "内存泄漏导致容器 OOMKilled",
+  "short": "oom",
+  "service": "app",
+  "description": "应用存在内存泄漏，RSS 持续增长，超过 limit 后被内核 OOMKilled，容器反复重启形成锯齿状内存曲线。",
+  "total_ticks": 260,
+  "pre_ticks": 40,
+  "fault_ticks": 150,
+  "tick_sleep_s": 0.03,
+  "fault_params": {
+    "mem_leak_rate": 1.7,
+    "oom_enabled": true
+  },
+  "expected_signals": [
+    "node_mem_percent 反复逼近 100 后骤降（锯齿）",
+    "container_restarts_total 递增",
+    "重启瞬间出现少量 5xx",
+    "app 日志出现 'Out of memory: Killed process' / 'OOMKilled'"
+  ],
+  "root_cause_hints": [
+    "cAdvisor / kubelet 事件里 OOMKilled 与 restartCount 增加",
+    "dmesg / app 日志定位被 kill 的进程与分配点",
+    "结合 heap 分析确认内存泄漏源；必要时先抬高 limit 再定位"
+  ],
+  "baseline_params": {
+    "rps": 120.0,
+    "app_workers": 16,
+    "timeout_ms": 600.0,
+    "conn_pool_size": 10,
+    "leaked_conns": 0,
+    "conn_timeout_ms": 400.0,
+    "node_cpu_target": 25.0,
+    "cpu_service_mult": 3.2,
+    "node_mem_target": 42.0,
+    "mem_leak_rate": 0.0,
+    "oom_enabled": false,
+    "mem_cap": 100.0,
+    "node_disk_target": 55.0,
+    "disk_fill_rate": 0.0,
+    "node_inode_target": 30.0,
+    "inode_fill_rate": 0.0,
+    "fs_cap": 100.0,
+    "db_base_ms": 150.0,
+    "db_cpu_target": 22.0,
+    "db_slow_query_rate": 0.0,
+    "db_slow_query_ms": 0.0,
+    "db_max_conns": 100,
+    "healthcheck_fail": false,
+    "lb_drop_ratio": 0.0,
+    "dns_fail_rate": 0.0,
+    "dns_timeout_ms": 340.0,
+    "cache_base_ms": 3.0,
+    "cache_hit_ratio": 0.85,
+    "cache_hotkey": false,
+    "cache_hotkey_ms": 220.0,
+    "cache_hotkey_prob": 0.6,
+    "cache_timeout_rate": 0.0,
+    "cache_timeout_ms": 520.0,
+    "request_base_ms": 6.0
+  },
+  "phase_boundaries": {
+    "pre": [
+      0,
+      40
+    ],
+    "fault": [
+      40,
+      190
+    ],
+    "post": [
+      190,
+      260
+    ]
+  }
+}

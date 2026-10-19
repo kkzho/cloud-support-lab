@@ -1,0 +1,78 @@
+{
+  "id": "S3-slow-sql-db-cpu",
+  "name": "慢 SQL / 缺失索引导致 DB CPU 飙升",
+  "short": "slow-sql",
+  "service": "db",
+  "description": "新上线的接口走了缺失索引的 SQL，数据库 CPU 飙升，慢查询堆积，业务侧 P99 恶化。",
+  "total_ticks": 260,
+  "pre_ticks": 40,
+  "fault_ticks": 130,
+  "tick_sleep_s": 0.03,
+  "fault_params": {
+    "db_cpu_target": 96.0,
+    "db_slow_query_rate": 0.15,
+    "db_slow_query_ms": 1200.0,
+    "db_base_ms": 180.0
+  },
+  "expected_signals": [
+    "db_cpu_percent 逼近 100",
+    "db_slow_queries_total 持续增长",
+    "http_request_duration_ms_p99 进入秒级",
+    "db_connections_used 升高（慢查询占用连接）"
+  ],
+  "root_cause_hints": [
+    "慢查询日志确认具体 SQL（慢查询 took 数千毫秒）",
+    "用 EXPLAIN 检查是否走了缺失索引导致全表扫描",
+    "对照 db_cpu_percent 与 QPS，评估是否加索引/改写 SQL"
+  ],
+  "baseline_params": {
+    "rps": 120.0,
+    "app_workers": 16,
+    "timeout_ms": 600.0,
+    "conn_pool_size": 10,
+    "leaked_conns": 0,
+    "conn_timeout_ms": 400.0,
+    "node_cpu_target": 25.0,
+    "cpu_service_mult": 3.2,
+    "node_mem_target": 42.0,
+    "mem_leak_rate": 0.0,
+    "oom_enabled": false,
+    "mem_cap": 100.0,
+    "node_disk_target": 55.0,
+    "disk_fill_rate": 0.0,
+    "node_inode_target": 30.0,
+    "inode_fill_rate": 0.0,
+    "fs_cap": 100.0,
+    "db_base_ms": 150.0,
+    "db_cpu_target": 22.0,
+    "db_slow_query_rate": 0.0,
+    "db_slow_query_ms": 0.0,
+    "db_max_conns": 100,
+    "healthcheck_fail": false,
+    "lb_drop_ratio": 0.0,
+    "dns_fail_rate": 0.0,
+    "dns_timeout_ms": 340.0,
+    "cache_base_ms": 3.0,
+    "cache_hit_ratio": 0.85,
+    "cache_hotkey": false,
+    "cache_hotkey_ms": 220.0,
+    "cache_hotkey_prob": 0.6,
+    "cache_timeout_rate": 0.0,
+    "cache_timeout_ms": 520.0,
+    "request_base_ms": 6.0
+  },
+  "phase_boundaries": {
+    "pre": [
+      0,
+      40
+    ],
+    "fault": [
+      40,
+      170
+    ],
+    "post": [
+      170,
+      260
+    ]
+  }
+}

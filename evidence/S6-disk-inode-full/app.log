@@ -1,0 +1,101 @@
+2026-01-12T09:00:03 INFO  [app] order/list handled in 12ms cache=hit status=200
+2026-01-12T09:00:10 INFO  [app] order/list handled in 12ms cache=hit status=200
+2026-01-12T09:00:11 INFO  [app] order/list handled in 12ms cache=hit status=200
+2026-01-12T09:00:17 INFO  [app] order/list handled in 12ms cache=hit status=200
+2026-01-12T09:00:19 INFO  [app] order/list handled in 12ms cache=hit status=200
+2026-01-12T09:00:23 INFO  [app] order/list handled in 12ms cache=hit status=200
+2026-01-12T09:00:26 INFO  [app] order/list handled in 12ms cache=hit status=200
+2026-01-12T09:00:27 INFO  [app] order/list handled in 12ms cache=hit status=200
+2026-01-12T09:00:28 INFO  [app] order/list handled in 12ms cache=hit status=200
+2026-01-12T09:00:30 INFO  [app] order/list handled in 12ms cache=miss status=200
+2026-01-12T09:00:32 INFO  [app] order/list handled in 12ms cache=miss status=200
+2026-01-12T09:00:33 INFO  [app] order/list handled in 12ms cache=hit status=200
+2026-01-12T09:00:34 INFO  [app] order/list handled in 12ms cache=hit status=200
+2026-01-12T09:00:35 INFO  [app] order/list handled in 12ms cache=hit status=200
+2026-01-12T09:00:36 INFO  [app] order/list handled in 12ms cache=miss status=200
+2026-01-12T09:00:38 INFO  [app] order/list handled in 12ms cache=hit status=200
+2026-01-12T09:00:43 INFO  [app] order/list handled in 12ms cache=hit status=200
+2026-01-12T09:00:48 INFO  [app] order/list handled in 12ms cache=hit status=200
+2026-01-12T09:00:54 INFO  [app] order/list handled in 12ms cache=hit status=200
+2026-01-12T09:00:58 INFO  [app] order/list handled in 12ms cache=hit status=200
+2026-01-12T09:01:09 INFO  [app] order/list handled in 12ms cache=hit status=200
+2026-01-12T09:01:10 INFO  [app] order/list handled in 12ms cache=hit status=200
+2026-01-12T09:01:12 INFO  [app] order/list handled in 12ms cache=hit status=200
+2026-01-12T09:01:15 INFO  [app] order/list handled in 12ms cache=miss status=200
+2026-01-12T09:01:18 INFO  [app] order/list handled in 12ms cache=hit status=200
+2026-01-12T09:01:19 INFO  [app] order/list handled in 12ms cache=hit status=200
+2026-01-12T09:01:22 INFO  [app] order/list handled in 12ms cache=hit status=200
+2026-01-12T09:01:27 INFO  [app] order/list handled in 12ms cache=hit status=200
+2026-01-12T09:01:30 INFO  [app] order/list handled in 12ms cache=hit status=200
+2026-01-12T09:01:37 INFO  [app] order/list handled in 12ms cache=hit status=200
+2026-01-12T09:01:39 INFO  [app] order/list handled in 12ms cache=hit status=200
+2026-01-12T09:01:42 INFO  [app] order/list handled in 12ms cache=hit status=200
+2026-01-12T09:01:43 INFO  [app] order/list handled in 12ms cache=miss status=200
+2026-01-12T09:01:49 INFO  [app] order/list handled in 12ms cache=hit status=200
+2026-01-12T09:01:53 ERROR [node] No space left on device: failed to write /var/log/app/app.log (disk=100% inode=82%)
+2026-01-12T09:01:55 ERROR [node] No space left on device: failed to write /var/log/app/app.log (disk=100% inode=83%)
+2026-01-12T09:01:56 ERROR [node] No space left on device: failed to write /var/log/app/app.log (disk=100% inode=84%)
+2026-01-12T09:01:58 ERROR [node] No space left on device: failed to write /var/log/app/app.log (disk=100% inode=85%)
+2026-01-12T09:02:03 ERROR [node] No space left on device: failed to write /var/log/app/app.log (disk=100% inode=89%)
+2026-01-12T09:02:04 ERROR [node] No space left on device: failed to write /var/log/app/app.log (disk=100% inode=90%)
+2026-01-12T09:02:05 ERROR [node] No space left on device: failed to write /var/log/app/app.log (disk=100% inode=90%)
+2026-01-12T09:02:06 ERROR [node] No space left on device: failed to write /var/log/app/app.log (disk=100% inode=91%)
+2026-01-12T09:02:08 ERROR [node] No space left on device: failed to write /var/log/app/app.log (disk=100% inode=92%)
+2026-01-12T09:02:11 ERROR [node] No space left on device: failed to write /var/log/app/app.log (disk=100% inode=94%)
+2026-01-12T09:02:13 ERROR [node] No space left on device: failed to write /var/log/app/app.log (disk=100% inode=96%)
+2026-01-12T09:02:14 ERROR [node] No space left on device: failed to write /var/log/app/app.log (disk=100% inode=97%)
+2026-01-12T09:02:18 ERROR [node] No space left on device: failed to write /var/log/app/app.log (disk=100% inode=99%)
+2026-01-12T09:02:19 ERROR [node] inode exhausted on /var/lib/app: 'No space left on device' while creating temp file (inode=100%)
+2026-01-12T09:02:21 ERROR [node] inode exhausted on /var/lib/app: 'No space left on device' while creating temp file (inode=100%)
+2026-01-12T09:02:23 ERROR [node] No space left on device: failed to write /var/log/app/app.log (disk=100% inode=100%)
+2026-01-12T09:02:23 ERROR [node] inode exhausted on /var/lib/app: 'No space left on device' while creating temp file (inode=100%)
+2026-01-12T09:02:24 ERROR [node] inode exhausted on /var/lib/app: 'No space left on device' while creating temp file (inode=100%)
+2026-01-12T09:02:25 ERROR [node] No space left on device: failed to write /var/log/app/app.log (disk=100% inode=100%)
+2026-01-12T09:02:26 ERROR [node] No space left on device: failed to write /var/log/app/app.log (disk=100% inode=100%)
+2026-01-12T09:02:26 ERROR [node] inode exhausted on /var/lib/app: 'No space left on device' while creating temp file (inode=100%)
+2026-01-12T09:02:27 ERROR [node] No space left on device: failed to write /var/log/app/app.log (disk=100% inode=100%)
+2026-01-12T09:02:27 ERROR [node] inode exhausted on /var/lib/app: 'No space left on device' while creating temp file (inode=100%)
+2026-01-12T09:02:31 ERROR [node] No space left on device: failed to write /var/log/app/app.log (disk=100% inode=100%)
+2026-01-12T09:02:32 ERROR [node] No space left on device: failed to write /var/log/app/app.log (disk=100% inode=100%)
+2026-01-12T09:02:33 ERROR [node] No space left on device: failed to write /var/log/app/app.log (disk=100% inode=100%)
+2026-01-12T09:02:33 ERROR [node] inode exhausted on /var/lib/app: 'No space left on device' while creating temp file (inode=100%)
+2026-01-12T09:02:34 ERROR [node] No space left on device: failed to write /var/log/app/app.log (disk=100% inode=100%)
+2026-01-12T09:02:34 ERROR [node] inode exhausted on /var/lib/app: 'No space left on device' while creating temp file (inode=100%)
+2026-01-12T09:02:35 ERROR [node] No space left on device: failed to write /var/log/app/app.log (disk=100% inode=100%)
+2026-01-12T09:02:37 ERROR [node] inode exhausted on /var/lib/app: 'No space left on device' while creating temp file (inode=100%)
+2026-01-12T09:02:38 ERROR [node] inode exhausted on /var/lib/app: 'No space left on device' while creating temp file (inode=100%)
+2026-01-12T09:02:39 ERROR [node] No space left on device: failed to write /var/log/app/app.log (disk=100% inode=100%)
+2026-01-12T09:02:40 ERROR [node] inode exhausted on /var/lib/app: 'No space left on device' while creating temp file (inode=100%)
+2026-01-12T09:02:41 ERROR [node] No space left on device: failed to write /var/log/app/app.log (disk=100% inode=100%)
+2026-01-12T09:02:41 ERROR [node] inode exhausted on /var/lib/app: 'No space left on device' while creating temp file (inode=100%)
+2026-01-12T09:02:42 ERROR [node] No space left on device: failed to write /var/log/app/app.log (disk=100% inode=100%)
+2026-01-12T09:02:45 ERROR [node] No space left on device: failed to write /var/log/app/app.log (disk=100% inode=100%)
+2026-01-12T09:02:46 ERROR [node] No space left on device: failed to write /var/log/app/app.log (disk=100% inode=100%)
+2026-01-12T09:02:46 ERROR [node] inode exhausted on /var/lib/app: 'No space left on device' while creating temp file (inode=100%)
+2026-01-12T09:02:48 ERROR [node] inode exhausted on /var/lib/app: 'No space left on device' while creating temp file (inode=100%)
+2026-01-12T09:02:49 ERROR [node] inode exhausted on /var/lib/app: 'No space left on device' while creating temp file (inode=100%)
+2026-01-12T09:02:52 ERROR [node] inode exhausted on /var/lib/app: 'No space left on device' while creating temp file (inode=100%)
+2026-01-12T09:02:54 ERROR [node] inode exhausted on /var/lib/app: 'No space left on device' while creating temp file (inode=100%)
+2026-01-12T09:02:56 ERROR [node] No space left on device: failed to write /var/log/app/app.log (disk=100% inode=100%)
+2026-01-12T09:02:57 ERROR [node] No space left on device: failed to write /var/log/app/app.log (disk=100% inode=100%)
+2026-01-12T09:02:58 ERROR [node] No space left on device: failed to write /var/log/app/app.log (disk=100% inode=100%)
+2026-01-12T09:02:59 ERROR [node] No space left on device: failed to write /var/log/app/app.log (disk=100% inode=100%)
+2026-01-12T09:02:59 ERROR [node] inode exhausted on /var/lib/app: 'No space left on device' while creating temp file (inode=100%)
+2026-01-12T09:03:00 INFO  [app] order/list handled in 12ms cache=hit status=200
+2026-01-12T09:03:04 INFO  [app] order/list handled in 12ms cache=miss status=200
+2026-01-12T09:03:06 INFO  [app] order/list handled in 12ms cache=hit status=200
+2026-01-12T09:03:08 INFO  [app] order/list handled in 12ms cache=miss status=200
+2026-01-12T09:03:14 INFO  [app] order/list handled in 12ms cache=hit status=200
+2026-01-12T09:03:17 INFO  [app] order/list handled in 12ms cache=hit status=200
+2026-01-12T09:03:25 INFO  [app] order/list handled in 12ms cache=hit status=200
+2026-01-12T09:03:39 INFO  [app] order/list handled in 12ms cache=hit status=200
+2026-01-12T09:03:44 INFO  [app] order/list handled in 12ms cache=hit status=200
+2026-01-12T09:03:52 INFO  [app] order/list handled in 12ms cache=hit status=200
+2026-01-12T09:03:57 INFO  [app] order/list handled in 12ms cache=hit status=200
+2026-01-12T09:03:59 INFO  [app] order/list handled in 12ms cache=hit status=200
+2026-01-12T09:04:02 INFO  [app] order/list handled in 12ms cache=hit status=200
+2026-01-12T09:04:07 INFO  [app] order/list handled in 12ms cache=hit status=200
+2026-01-12T09:04:10 INFO  [app] order/list handled in 12ms cache=hit status=200
+2026-01-12T09:04:12 INFO  [app] order/list handled in 12ms cache=hit status=200
+2026-01-12T09:04:14 INFO  [app] order/list handled in 12ms cache=hit status=200
+2026-01-12T09:04:16 INFO  [app] order/list handled in 12ms cache=hit status=200
