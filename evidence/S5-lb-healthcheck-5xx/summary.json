@@ -6,10 +6,10 @@
     "description": "SLB 健康检查探针失败，后端被摘除，网关大量返回 502/504，但后端实例本身资源指标正常。"
   },
   "run": {
-    "generated_at": "2026-10-15T04:12:52",
+    "generated_at": "2026-10-26T13:02:43",
     "total_ticks": 240,
     "tick_sleep_s": 0.03,
-    "wall_seconds": 7.292,
+    "wall_seconds": 7.29,
     "phase_boundaries": {
       "pre": [
         0,

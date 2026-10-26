@@ -9,7 +9,19 @@
 
 ---
 
-## 一、两种运行模式
+## 一、三种运行模式
+
+### 模式 ⓿：跟着 Notebook 一步步做（最推荐，尤其新手）
+
+```bash
+jupyter lab notebooks/cloud-fault-drill.ipynb
+```
+
+`notebooks/cloud-fault-drill.ipynb` 是一份**渐进式实验手册**：从 Lab 0 健康基线开始，
+逐个复现 8 类故障（CPU 打满 / 连接池耗尽 / 慢 SQL / 内存泄漏 OOM / SLB 健康检查 502 /
+磁盘 inode / DNS / Redis 热 key），每个 Lab 都包含「原理 → 注入 → 观察 → 对答案 → 恢复验证
+→ 面试一句话」，最后还有盲测、值班 SOP 与 80 分自评卡。它会自动拉起/回收下面的仿真进程，
+不需要记命令。
 
 ### 模式 ①：沙箱内纯进程仿真（无需 docker，推荐）
 
@@ -49,10 +61,14 @@ curl -s localhost:8080/metrics
 
 ### 模式 ②：本地 Docker 真实编排
 
-`lab/docker-compose.yml` 提供了一个“真·可运行”版本（nginx + app + redis + mysql +
-prometheus + grafana + alertmanager + nginx-exporter + loadgen）。**在有 Docker 的本机执行**：
+`lab/docker-compose.yml` 提供了一个“真·可运行”版本（haproxy + nginx + app + redis + mysql +
+prometheus + grafana + alertmanager + nginx-exporter + loadgen）。**在有 Docker 的本机执行**，
+且前提是 Docker daemon 已启动（`docker info` 能正常输出）：
 
 ```bash
+# 0) 先确认 daemon 在跑；Mac 上通常是 Docker Desktop 没开
+docker info >/dev/null && echo "docker OK"
+
 cd lab && docker compose up -d
 # Grafana:      http://localhost:3000  (admin/admin)
 # Prometheus:   http://localhost:9090

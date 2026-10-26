@@ -6,10 +6,10 @@
     "description": "新上线的接口走了缺失索引的 SQL，数据库 CPU 飙升，慢查询堆积，业务侧 P99 恶化。"
   },
   "run": {
-    "generated_at": "2026-10-15T04:12:37",
+    "generated_at": "2026-10-26T13:02:28",
     "total_ticks": 260,
     "tick_sleep_s": 0.03,
-    "wall_seconds": 7.928,
+    "wall_seconds": 7.923,
     "phase_boundaries": {
       "pre": [
         0,

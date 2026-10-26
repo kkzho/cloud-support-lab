@@ -5,10 +5,10 @@
 # Docker:  cd lab && docker compose up -d
 #
 # Topology (mirrors the simulated 3-tier business):
-#   loadgen -> nginx (SLB/gateway) -> app (business, /healthz + /api/order/list
-#   + /metrics) -> redis (cache) + mysql (db);  prometheus/grafana/alertmanager
-#   observe the whole chain; node-exporter/mysqld-exporter/redis-exporter feed
-#   infra metrics.
+#   loadgen -> haproxy (SLB, ACTIVE health check) -> nginx (internal ingress)
+#   -> app (business, /healthz + /api/order/list + /metrics) -> redis (cache)
+#   + mysql (db);  prometheus/grafana/alertmanager observe the whole chain;
+#   node-exporter/mysqld-exporter/redis-exporter feed infra metrics.
 #
 # --- China / slow Docker Hub users -----------------------------------------
 # If `docker compose pull` times out against registry-1.docker.io, set registry
@@ -29,18 +29,31 @@ x-logging: &default-logging
     max-file: "3"
 
 services:
-  # ---------- gateway / SLB ------------------------------------------------
+  # ---------- access layer: SLB -> internal ingress ------------------------
+  # HAProxy plays the cloud SLB: it ACTIVE-checks GET /healthz on a fixed
+  # interval and, after N failures, stops sending traffic to the ingress and
+  # answers 502. Open-source nginx can only do PASSIVE checks, so this is the
+  # component that makes the S5 scenario realistic.
+  haproxy:
+    image: haproxy:2.9-alpine
+    container_name: drill-haproxy
+    depends_on: [nginx]
+    ports:
+      - "80:80"
+    volumes:
+      - ./docker/haproxy.cfg:/usr/local/etc/haproxy/haproxy.cfg:ro
+    logging: *default-logging
+
+  # Internal ingress behind the SLB (keeps nginx access log + /stub_status for
+  # nginx-prometheus-exporter). Not published on the host: clients only reach
+  # it through haproxy.
   nginx:
     image: nginx:1.27-alpine
     container_name: drill-nginx
     depends_on: [app]
-    ports:
-      - "80:80"
     volumes:
       - ./docker/nginx.conf:/etc/nginx/nginx.conf:ro
     logging: *default-logging
-    # An access layer that proxies /api/* to app, exposes /healthz, and returns
-    # 502/504 when the app backend is unhealthy (health check driven by app).
 
   # ---------- business app (the simulator itself) --------------------------
   app:
@@ -164,15 +177,15 @@ services:
   loadgen:
     image: alpine:3.20
     container_name: drill-loadgen
-    depends_on: [nginx]
+    depends_on: [haproxy]
     command:
       - /bin/sh
       - -c
-      - "apk add --no-cache curl >/dev/null 2>&1; while true; do for p in /api/order/list /api/order/list /api/order/list /healthz; do curl -s -o /dev/null http://nginx$p; done; sleep 0.05; done"
+      - "apk add --no-cache curl >/dev/null 2>&1; while true; do curl -s -o /dev/null http://haproxy/api/order/list; sleep 0.05; done"
     logging: *default-logging
-    # Sustains ~15 rps against /api/order/list plus ~5 rps against /healthz.
-    # The /healthz probes are what trigger nginx passive health-check failures
-    # during S5 (healthz returns 500) so the gateway starts returning 502.
+    # Sustains ~20 rps of business traffic through the SLB. HAProxy decides
+    # health on its own (active /healthz checks), so loadgen only needs to keep
+    # the business path busy — during S5 it will start observing 502s.
 
 volumes:
   mysql-data: {}

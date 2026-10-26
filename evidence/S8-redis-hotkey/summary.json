@@ -6,10 +6,10 @@
     "description": "某个热 key/大 key 被高频访问，单分片 CPU/网络被打满，缓存层响应抖动、部分请求超时，回源压力上升。"
   },
   "run": {
-    "generated_at": "2026-10-15T04:13:16",
+    "generated_at": "2026-10-26T13:03:07",
     "total_ticks": 260,
     "tick_sleep_s": 0.03,
-    "wall_seconds": 7.939,
+    "wall_seconds": 7.926,
     "phase_boundaries": {
       "pre": [
         0,

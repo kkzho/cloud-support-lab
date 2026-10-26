@@ -6,10 +6,10 @@
     "description": "业务实例 CPU 被占满（死循环/批量任务），单实例处理能力下降，接口延迟升高并出现部分请求超时。"
   },
   "run": {
-    "generated_at": "2026-10-15T04:12:21",
+    "generated_at": "2026-10-26T13:02:12",
     "total_ticks": 260,
     "tick_sleep_s": 0.03,
-    "wall_seconds": 7.931,
+    "wall_seconds": 7.928,
     "phase_boundaries": {
       "pre": [
         0,

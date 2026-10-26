@@ -6,10 +6,10 @@
     "description": "应用存在内存泄漏，RSS 持续增长，超过 limit 后被内核 OOMKilled，容器反复重启形成锯齿状内存曲线。"
   },
   "run": {
-    "generated_at": "2026-10-15T04:12:45",
+    "generated_at": "2026-10-26T13:02:36",
     "total_ticks": 260,
     "tick_sleep_s": 0.03,
-    "wall_seconds": 7.922,
+    "wall_seconds": 7.916,
     "phase_boundaries": {
       "pre": [
         0,

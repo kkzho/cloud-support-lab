@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-10-15T04:13:16",
+  "generated_at": "2026-10-26T13:03:07",
   "results": [
     {
       "id": "S1-app-cpu-saturation",
-      "wall_seconds": 7.931,
+      "wall_seconds": 7.928,
       "log_lines": 179,
       "anomalies": [
         "5xx 错误率从 0.00% 升至 13.21%（故障期实测）",
@@ -62,7 +62,7 @@
     },
     {
       "id": "S2-conn-pool-exhaustion",
-      "wall_seconds": 7.923,
+      "wall_seconds": 7.927,
       "log_lines": 293,
       "anomalies": [
         "5xx 错误率从 0.00% 升至 20.54%（故障期实测）",
@@ -119,7 +119,7 @@
     },
     {
       "id": "S3-slow-sql-db-cpu",
-      "wall_seconds": 7.928,
+      "wall_seconds": 7.923,
       "log_lines": 287,
       "anomalies": [
         "5xx 错误率从 0.00% 升至 15.74%（故障期实测）",
@@ -179,7 +179,7 @@
     },
     {
       "id": "S4-memory-leak-oomkill",
-      "wall_seconds": 7.922,
+      "wall_seconds": 7.916,
       "log_lines": 60,
       "anomalies": [
         "node_mem_percent 峰值达 99.8%（均值 66.4%）",
@@ -235,7 +235,7 @@
     },
     {
       "id": "S5-lb-healthcheck-5xx",
-      "wall_seconds": 7.292,
+      "wall_seconds": 7.29,
       "log_lines": 247,
       "anomalies": [
         "业务接口到达率从 118 降至 60 req/tick（后端被摘除）",
@@ -290,7 +290,7 @@
     },
     {
       "id": "S6-disk-inode-full",
-      "wall_seconds": 7.926,
+      "wall_seconds": 7.915,
       "log_lines": 101,
       "anomalies": [
         "5xx 错误率从 0.00% 升至 15.09%（故障期实测）",
@@ -347,7 +347,7 @@
     },
     {
       "id": "S7-dns-resolution-fail",
-      "wall_seconds": 7.924,
+      "wall_seconds": 7.921,
       "log_lines": 165,
       "anomalies": [
         "5xx 错误率从 0.00% 升至 30.14%（故障期实测）",
@@ -404,7 +404,7 @@
     },
     {
       "id": "S8-redis-hotkey",
-      "wall_seconds": 7.939,
+      "wall_seconds": 7.926,
       "log_lines": 222,
       "anomalies": [
         "5xx 错误率从 0.00% 升至 5.77%（故障期实测）",

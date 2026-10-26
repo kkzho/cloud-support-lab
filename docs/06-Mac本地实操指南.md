@@ -151,7 +151,7 @@ docker compose ps          # 等到全部 healthy / running
 首次会构建 app 镜像并拉取 mysql 等镜像，较慢；可先预热：
 
 ```bash
-docker pull mysql:8.0 redis:7-alpine nginx:1.27-alpine \
+docker pull mysql:8.0 redis:7-alpine nginx:1.27-alpine haproxy:2.9-alpine \
   prom/prometheus:v2.54.1 prom/alertmanager:v0.27.0 grafana/grafana:11.2.0 \
   nginx/nginx-prometheus-exporter:1.3.0
 ```
@@ -190,12 +190,20 @@ docker pull mysql:8.0 redis:7-alpine nginx:1.27-alpine \
 | Prometheus | http://localhost:9090 | Targets / Alerts 页最有用 |
 | Alertmanager | http://localhost:9093 | 看告警分组与抑制 |
 | 业务 app | http://localhost:8080/healthz 、`/api/order/list` 、`/metrics` | 直连后端 |
-| 网关 (nginx/SLB) | http://localhost/api/order/list | 走接入层，故障时返回 502/504 |
+| 网关 (SLB / HAProxy) | http://localhost/api/order/list | 接入层：**主动健康检查**，后端被摘时返回 502 |
 | MySQL / Redis | localhost:3306 (`root`/`drill-root`) 、 localhost:6379 | 真实下游 |
 | 各 exporter | 9100 node / 9104 mysql / 9121 redis / 9113 nginx-exporter | 供 Prometheus 抓取 |
 
-拓扑：`loadgen → nginx(SLB/网关) → app → redis + mysql`，观测侧 `prometheus/grafana/alertmanager`
-+ `node/mysqld/redis/nginx exporter`。与 `docs/01-架构与云产品映射.md` 一一对应。
+拓扑：`loadgen → haproxy(SLB) → nginx(内部 ingress) → app → redis + mysql`，观测侧
+`prometheus/grafana/alertmanager` + `node/mysqld/redis/nginx exporter`。与
+`docs/01-架构与云产品映射.md` 一一对应。
+
+> **为什么接入层是 HAProxy 而不是 nginx？**
+> 真实云 SLB/CLB/ELB 用的是**主动健康检查**：每隔 N 秒主动去探 `GET /healthz`，连续失败
+> K 次就把后端摘除。**开源 nginx 只有被动健康检查**（靠真实业务请求失败才摘后端）——
+> 当业务接口本身是健康的（200），nginx 永远不会把后端判为不健康。所以本实验用 HAProxy
+> 扮演 SLB（`option httpchk GET /healthz`），nginx 退为内部 ingress（保留访问日志与
+> `/stub_status` 指标）。这正好复现 S5 的精髓：**后端健康、但走 SLB 却拿到 502**。
 
 ### 4.3 注入故障：切换场景
 
@@ -230,8 +238,9 @@ curl -s -o /dev/null -w "healthz=%{http_code}\n" http://localhost:8080/healthz
 curl -s http://localhost:8080/metrics | grep gateway_upstream_5xx_total
 
 # ④ 看接入层日志
-docker logs drill-nginx --tail 30         # upstream timed out / no live upstreams
-docker logs drill-app  --tail 30          # health check failed -> backend marked DOWN
+docker logs drill-haproxy --tail 30       # SLB：健康检查失败 -> 后端 DOWN -> 返回 502
+docker logs drill-nginx   --tail 30       # ingress：upstream timed out / no live upstreams
+docker logs drill-app     --tail 30       # health check failed -> backend marked DOWN
 ```
 
 **在 Grafana 看板上的观察顺序**（对应真题排障路径）：
@@ -290,6 +299,7 @@ docker stats --no-stream
 
 | 现象 | 原因 | 处理 |
 |---|---|---|
+| `failed to connect to the docker API at unix:///Users/<you>/.docker/run/docker.sock ... no such file or directory` | Docker Desktop 没启动（或只装了 CLI、没有 daemon） | `open -a Docker`，等鲸鱼图标变绿后 `docker info` 能出内容再继续；若 `docker context ls` 显示的不是 `desktop-linux`，执行 `docker context use desktop-linux` |
 | `failed to resolve reference ... context deadline exceeded` + 一连串 `No such image` | Docker Hub 在国内连接超时 | 见 4.1 节方案一/方案二：配置 `registry-mirrors` 或跑 `scripts/pull-images.sh` |
 | `docker compose up` 卡在 mysql | 首次初始化慢 / 内存不足 | 调大 Docker Desktop 内存≥6GB；`docker compose logs mysql` 看进度 |
 | 镜像 `no matching manifest for linux/arm64` | 该镜像无 arm64 版 | 本 compose 用的镜像均有 arm64；如自行替换某镜像无 arm64，可在 Docker Desktop 开启"Use Rosetta for x86/amd64 emulation" |

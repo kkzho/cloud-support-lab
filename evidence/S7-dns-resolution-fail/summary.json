@@ -6,10 +6,10 @@
     "description": "集群 DNS/CoreDNS 解析异常，下游域名间歇性解析超时，业务出现间歇性 5xx 与连接超时。"
   },
   "run": {
-    "generated_at": "2026-10-15T04:13:08",
+    "generated_at": "2026-10-26T13:02:59",
     "total_ticks": 260,
     "tick_sleep_s": 0.03,
-    "wall_seconds": 7.924,
+    "wall_seconds": 7.921,
     "phase_boundaries": {
       "pre": [
         0,

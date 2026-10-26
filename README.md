@@ -28,6 +28,7 @@
 | 稳定性治理与高可用改造 | [docs/04-稳定性治理方案.md](docs/04-稳定性治理方案.md) |
 | 云产品与架构映射 | [docs/01-架构与云产品映射.md](docs/01-架构与云产品映射.md) |
 | 面试表达 | [docs/05-面试讲述稿与高频题.md](docs/05-面试讲述稿与高频题.md) |
+| **从零到独立排障的学习路径** | [lab/notebooks/cloud-fault-drill.ipynb](lab/notebooks/cloud-fault-drill.ipynb)（9 个渐进式 Lab：健康基线 → 8 类故障逐个复现与恢复 → 盲测 → 值班 SOP → 80 分自评卡） |
 
 ---
 
@@ -48,10 +49,12 @@ cloud-support-lab/
 │       ├── RCA-03-慢SQL-DB-CPU飙升.md
 │       └── RCA-04-内存泄漏-容器OOMKilled.md
 ├── lab/                            # 可运行的仿真实验环境（纯 Python 标准库）
+│   ├── notebooks/
+│   │   └── cloud-fault-drill.ipynb # ★ 渐进式实验手册：9 个 Lab + 盲测 + 值班 SOP + 自评卡
 │   ├── sim/                        # 仿真应用栈 + 故障注入 + 指标导出 + 运行器
 │   ├── scenarios/                  # 8 个场景 JSON（可读）
 │   ├── scripts/                    # 便捷运行脚本
-│   ├── docker-compose.yml          # 本地真实版编排（nginx+app+redis+mysql+prom/prom/alert+g）
+│   ├── docker-compose.yml          # 本地真实版编排（haproxy+nginx+app+redis+mysql+prom/prom/alert+g）
 │   └── README.md                   # 实验环境说明
 ├── ops/                            # 可观测性与告警配置
 │   ├── prometheus/{prometheus.yml,rules.yml}
@@ -66,6 +69,15 @@ cloud-support-lab/
 ---
 
 ## 四、如何运行实验环境
+
+### 方式零（推荐先走这条）：跟着 Notebook 一步步做
+
+```bash
+pip install jupyterlab                 # 若已装可跳过
+jupyter lab lab/notebooks/cloud-fault-drill.ipynb
+```
+
+从 Lab 0（健康基线）开始，按顺序跑；每个 Lab 都是「先预测 → 再注入 → 看证据 → 对答案 → 验证恢复 → 一句话总结」。不需要预装 Docker，Notebook 会自动拉起本地仿真进程。
 
 ### 方式一：沙箱/本机纯进程仿真（无需 Docker）
 

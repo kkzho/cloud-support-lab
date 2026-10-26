@@ -6,10 +6,10 @@
     "description": "日志或临时文件写满磁盘/inode，应用写入失败并开始堆积，容器内 'No space left on device'。"
   },
   "run": {
-    "generated_at": "2026-10-15T04:13:00",
+    "generated_at": "2026-10-26T13:02:51",
     "total_ticks": 260,
     "tick_sleep_s": 0.03,
-    "wall_seconds": 7.926,
+    "wall_seconds": 7.915,
     "phase_boundaries": {
       "pre": [
         0,

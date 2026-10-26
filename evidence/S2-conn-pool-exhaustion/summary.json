@@ -6,10 +6,10 @@
     "description": "应用侧数据库连接池被占满（连接泄漏或慢查询长期占用），新请求获取连接时排队直至超时。"
   },
   "run": {
-    "generated_at": "2026-10-15T04:12:29",
+    "generated_at": "2026-10-26T13:02:20",
     "total_ticks": 260,
     "tick_sleep_s": 0.03,
-    "wall_seconds": 7.923,
+    "wall_seconds": 7.927,
     "phase_boundaries": {
       "pre": [
         0,
